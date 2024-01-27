@@ -117,4 +117,25 @@ class MedicineController extends Controller
         }
         return response()->json($response);
     }
+
+    public function getMedicineDetail(Request $request)
+    {
+        $search = $request->search;
+
+        if ($search == '') {
+            $medicines = [];
+        } else {
+            $medicines = Medicine::select('id','name','harga')->where('name', 'like', '%' . $search . '%')->limit(5)->get();
+        }
+        $response = [];
+        foreach ($medicines as $item) {
+            $response[] = [
+                "id" => $item->id."-".$item->harga,
+                "text" => $item->name,
+            ];
+        }
+        return response()->json($response);
+    }
+
+
 }

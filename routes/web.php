@@ -56,6 +56,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
         Route::get('transaction', [App\Http\Controllers\Admin\TransactionController::class, 'index'])->name('admin.transaction.index');
         Route::get('transaction/detail/{transaction}', [App\Http\Controllers\Admin\TransactionController::class, 'detail'])->name('admin.transaction.detail');
+        Route::post('transaction/update/{transaction}', [App\Http\Controllers\Admin\TransactionController::class, 'update'])->name('admin.transaction.update');
 
 });
 
@@ -87,6 +88,7 @@ Route::prefix('apoteker')->group(function () {
 
 Route::prefix('ajax')->group(function() {
     Route::post('/get-medicine', [App\Http\Controllers\Admin\MedicineController::class, 'getMedicine']);
+    Route::post('/get-medicine-detail', [App\Http\Controllers\Admin\MedicineController::class, 'getMedicineDetail']);
 });
 
 Auth::routes();

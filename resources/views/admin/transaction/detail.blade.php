@@ -83,7 +83,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Transaksi</h5>
-                <form action="{{ route('admin.dokter.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.transaction.update', $transaction->id) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
@@ -92,53 +93,145 @@
                                 <textarea name="medical_records" id="medical_records" class="form-control" cols="30" rows="5"
                                     placeholder="Rekam Medis"></textarea>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="basicInput">Obat</label>
-                                <span id="row-obat">
-                                    <div class="row mt-3">
-                                        <div class="col">
-                                            <select name="medicine_id[]" id="medicine_id"
-                                                class="form-control select-medicine">
-                                                <option value=""></option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <input type="number" id="medicine_qty_0" class="form-control" value=""
-                                                name="medicine_qty[]" placeholder="Quantity" required>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" id="medicine_price_0" class="form-control" value=""
-                                                name="medicine_price[]" placeholder="Harga" readonly>
-                                        </div>
-                                        <div class="col-md-1" id="add-obat">
-                                            <button class="btn btn-success btn-sm" style="margin-top: 5px">(+)</button>
-                                        </div>
+                            @if ($transaction->detailMedicine->isNotEmpty())
+                                <div class="form-group mb-3">
+                                    <label for="basicInput">Obat</label>
+                                    <span id="row-obat">
 
-                                    </div>
-                                </span>
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="basicInput">Layanan</label>
-                                <div class="row mt-3">
-                                    <div class="col">
-                                        <input type="email" id="email" class="form-control" value=""
-                                            name="layanan_service_name" placeholder="Nama Layanan" required>
-                                    </div>
-                                    <div class="col">
-                                        <input type="number" id="qty" class="form-control" value=""
-                                            name="layanan_qty[]" placeholder="Quantity" required>
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" id="" class="form-control" value=""
-                                            name="layanan_price[]" placeholder="Harga">
-                                    </div>
-                                    <div class="col-md-1" id="add-layanan">
-                                        <button class="btn btn-success btn-sm" style="margin-top: 5px">(+)</button>
-                                    </div>
-
+                                        @foreach ($transaction->detailMedicine as $value)
+                                            @if (!empty($value->medicine_id))
+                                                <div class="row mt-3">
+                                                    <div class="col">
+                                                        <select name="medicine_id[]"
+                                                            class="form-control select-medicine-{{ $loop->index }}">
+                                                            <option value="{{ $value->medicine_id }}">
+                                                                {{ $value->medicine->name }}</option>
+                                                        </select>
+                                                        {{-- <input type="hidden" id="id_medicine_{{ $loop->index }}"
+                                                            value="{{ $value->medicine_id }}-{{ $value->medicine->harga }}">
+                                                        <input type="hidden" id="name_medicine_{{ $loop->index }}"
+                                                            value="{{ $value->medicine->name }}"> --}}
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="number" id="medicine_qty_{{ $loop->index }}"
+                                                            class="form-control" value="{{ $value->qty }}"
+                                                            name="medicine_qty[]" placeholder="Quantity" required>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" id="medicine_price_{{ $loop->index }}"
+                                                            class="form-control" value="{{ $value->price }}"
+                                                            name="medicine_price[]" placeholder="Harga" readonly>
+                                                    </div>
+                                                    @if ($loop->index == 0)
+                                                        <div class="col-md-1" id="add-obat">
+                                                            <button class="btn btn-success btn-sm"
+                                                                style="margin-top: 5px">(+)</button>
+                                                        </div>
+                                                    @else
+                                                        <div class="col-md-1" id="add-obat">
+                                                            <button class="btn btn-danger btn-sm" id="delete-row-obat"
+                                                                data-index="{{ $loop->index }}"
+                                                                style="margin-top: 5px">(-)</button>
+                                                        </div>
+                                                    @endif
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </span>
                                 </div>
-                            </div>
+                            @else
+                                <div class="form-group mb-3">
+                                    <label for="basicInput">Obat</label>
+                                    <span id="row-obat">
+                                        <div class="row mt-3">
+                                            <div class="col">
+                                                <select name="medicine_id[]" id="medicine_id"
+                                                    class="form-control select-medicine-0">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <input type="number" id="medicine_qty_0" class="form-control"
+                                                    value="" name="medicine_qty[]" placeholder="Quantity" required>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" id="medicine_price_0" class="form-control"
+                                                    value="" name="medicine_price[]" placeholder="Harga" readonly>
+                                            </div>
+                                            <div class="col-md-1" id="add-obat">
+                                                <button class="btn btn-success btn-sm" style="margin-top: 5px">(+)</button>
+                                            </div>
+
+                                        </div>
+                                    </span>
+                                </div>
+                            @endif
+
+                            @if ($transaction->detailService->isNotEmpty())
+                                <div class="form-group mb-3">
+                                    <label for="basicInput">Layanan</label>
+                                    <span id="row-layanan">
+                                        @foreach ($transaction->detailService as $value)
+                                            <div class="row mt-3">
+                                                <div class="col">
+                                                    <input type="text" id="layanan_service_name_{{ $loop->index }}"
+                                                        class="form-control" value="{{ $value->service_name }}"
+                                                        name="layanan_service_name" placeholder="Nama Layanan" required>
+                                                </div>
+                                                <div class="col">
+                                                    <input type="number" id="layanan_qty_{{ $loop->index }}"
+                                                        class="form-control" value="{{ $value->qty }}"
+                                                        name="layanan_qty[]" placeholder="Quantity" required>
+                                                </div>
+                                                <div class="col">
+                                                    <input type="text" id="layanan_price_{{ $loop->index }}"
+                                                        class="form-control" value="{{ $value->price }}"
+                                                        name="layanan_price[]" placeholder="Harga">
+                                                </div>
+                                                @if ($loop->index == 0)
+                                                    <div class="col-md-1" id="add-layanan">
+                                                        <button class="btn btn-success btn-sm"
+                                                            style="margin-top: 5px">(+)</button>
+                                                    </div>
+                                                @else
+                                                    <div class="col-md-1" id="add-layanan">
+                                                        <button class="btn btn-danger btn-sm" id="delete-row-layanan"
+                                                            data-index="{{ $loop->index }}"
+                                                            style="margin-top: 5px">(-)</button>
+                                                    </div>
+                                                @endif
+
+                                            </div>
+                                        @endforeach
+                                    </span>
+                                </div>
+                            @else
+                                <div class="form-group mb-3">
+                                    <label for="basicInput">Layanan</label>
+                                    <span id="row-layanan">
+                                        <div class="row mt-3">
+                                            <div class="col">
+                                                <input type="text" id="layanan_service_name_0" class="form-control"
+                                                    value="" name="layanan_service_name" placeholder="Nama Layanan"
+                                                    required>
+                                            </div>
+                                            <div class="col">
+                                                <input type="number" id="layanan_qty_0" class="form-control"
+                                                    value="" name="layanan_qty[]" placeholder="Quantity" required>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" id="layanan_price_0" class="form-control"
+                                                    value="" name="layanan_price[]" placeholder="Harga">
+                                            </div>
+                                            <div class="col-md-1" id="add-layanan">
+                                                <button class="btn btn-success btn-sm"
+                                                    style="margin-top: 5px">(+)</button>
+                                            </div>
+
+                                        </div>
+                                    </span>
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-md-12">
@@ -165,20 +258,32 @@
 
         <script>
             $(document).ready(function() {
-                var data = [];
-                var index = 0;
+                const data = @json($dataObat);
+                const dataLayanan = @json($dataLayanan);
+                var index = data.length == 0 ? 0 : data.length - 1;
+                var indexLayanan = dataLayanan.length == 0 ? 0 : dataLayanan.length - 1;
                 var HOST_URL = "{{ url('/') }}";
+                calculateTotalPrice(data, dataLayanan);
                 // select 2
-                loadSelect(index);
+                if (index > 0) {
+                    data.forEach((el) => loadSelect(el.index));
+                } else {
+                    loadSelect(index);
+                }
+
+                console.log(indexLayanan);
+                if (dataLayanan.length == 0) {
+                    loadLayanan(indexLayanan);
+                }
 
                 function loadSelect(index) {
-                    $(`.select-medicine`).select2({
+                    $(`.select-medicine-${index}`).select2({
                         placeholder: "Cari Obat",
                         theme: "bootstrap-5",
                         containerCssClass: "select2--small",
                         dropdownCssClass: "select2--small",
                         ajax: {
-                            url: `${HOST_URL}/ajax/get-medicine`,
+                            url: `${HOST_URL}/ajax/get-medicine-detail`,
                             type: "post",
                             dataType: "json",
                             delay: 250,
@@ -196,9 +301,26 @@
                         },
                     });
 
-                    $('.select-medicine').on("select2:select", function(e) {
-                        $(`#medicine_price_${index}`).val(10000);
+                    $(`.select-medicine-${index}`).on("select2:select", function(e) {
+                        var selectVal = $(this).val();
+                        var price = selectVal.split('-')[1];
+                        $(`#medicine_price_${index}`).val(price);
                         $(`#medicine_qty_${index}`).val(1);
+
+                        const tempData = {
+                            'index': index,
+                            'medicine_price': price,
+                            'medicine_qty': 1
+                        };
+                        data.push(tempData);
+                        calculateTotalPrice(data, dataLayanan);
+                    });
+
+                    $(`#medicine_qty_${index}`).bind('click keyup', function() {
+                        objIndex = data.findIndex((obj => obj.index == index));
+
+                        data[objIndex].medicine_qty = $(this).val();
+                        calculateTotalPrice(data, dataLayanan);
                     });
                 }
 
@@ -208,7 +330,7 @@
                     var html = `
                         <div class="row mt-3">
                             <div class="col">
-                                <select name="medicine_id[]" class="form-control select-medicine">
+                                <select name="medicine_id[]" class="form-control select-medicine-${index}">
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -221,7 +343,7 @@
                                     name="medicine_price[]" placeholder="Harga" id="medicine_price_${index}" readonly>
                             </div>
                             <div class="col-md-1" id="add-obat">
-                                <button class="btn btn-danger btn-sm" id="delete-row-obat"
+                                <button class="btn btn-danger btn-sm" id="delete-row-obat" data-index="${index}"
                                     style="margin-top: 5px">(-)</button>
                             </div>
                         </div>
@@ -232,9 +354,99 @@
 
                 $(document).on('click', '#delete-row-obat', function() {
                     $(this).parent().parent().remove();
+
+                    var indexRow = $(this).data('index');
+
+                    data.splice(indexRow, 1);
+                    calculateTotalPrice(data, dataLayanan);
+
                 });
 
+                function calculateTotalPrice(data, dataLayanan) {
+                    var totalPrice = 0;
+                    var totalPriceMedicine = 0;
+                    var totalPriceLayanan = 0;
 
+                    data.forEach((el) => totalPriceMedicine += parseInt(el.medicine_price) * parseInt(el
+                        .medicine_qty));
+
+                    dataLayanan.forEach((el) => totalPriceLayanan += parseInt(el.layanan_price) * parseInt(el
+                        .layanan_qty));
+                    var totalPrice = totalPriceMedicine + totalPriceLayanan;
+                    $("#total-price").text(totalPrice);
+
+
+                    return totalPrice;
+                }
+                // for layanan
+                function loadLayanan(indexLayanan) {
+                    const tempData = {
+                        'index': indexLayanan,
+                        'layanan_service_name': null,
+                        'layanan_qty': 0,
+                        'layanan_price': 0,
+                    };
+
+                    dataLayanan.push(tempData);
+                    console.log(dataLayanan);
+                    $(`#layanan_service_name_${indexLayanan}`).bind('click keyup', function() {
+                        objIndex = dataLayanan.findIndex((obj => obj.index == indexLayanan));
+                        dataLayanan[objIndex].layanan_service_name = $(this).val();
+
+                    });
+
+
+                    $(`#layanan_qty_${indexLayanan}`).bind('click keyup', function() {
+                        objIndex = dataLayanan.findIndex((obj => obj.index == indexLayanan));
+
+                        dataLayanan[objIndex].layanan_qty = $(this).val();
+
+                        calculateTotalPrice(data, dataLayanan);
+                    });
+
+                    $(`#layanan_price_${indexLayanan}`).bind('click keyup', function() {
+                        objIndex = dataLayanan.findIndex((obj => obj.index == indexLayanan));
+                        dataLayanan[objIndex].layanan_price = $(this).val();
+
+                        calculateTotalPrice(data, dataLayanan);
+                    });
+
+                }
+
+                $("#add-layanan").click(function(e) {
+                    e.preventDefault();
+                    indexLayanan = indexLayanan + 1;
+                    var html = `
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="text" id="layanan_service_name_${indexLayanan}" class="form-control" value=""
+                                    name="layanan_service_name" placeholder="Nama Layanan" required>
+                            </div>
+                            <div class="col">
+                                <input type="number" id="layanan_qty_${indexLayanan}" class="form-control" value=""
+                                    name="layanan_qty[]" placeholder="Quantity" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="layanan_price_${indexLayanan}" class="form-control" value=""
+                                    name="layanan_price[]" placeholder="Harga">
+                            </div>
+                            <div class="col-md-1" id="add-obat">
+                                <button class="btn btn-danger btn-sm" id="delete-row-layanan" data-index="${indexLayanan}"
+                                    style="margin-top: 5px">(-)</button>
+                            </div>
+                        </div>
+                    `;
+                    $("#row-layanan").append(html);
+                    loadLayanan(indexLayanan);
+                });
+
+                $(document).on('click', '#delete-row-layanan', function() {
+                    $(this).parent().parent().remove();
+
+                    var indexRow = $(this).data('index');
+                    dataLayanan.splice(indexRow, 1);
+                    calculateTotalPrice(data, dataLayanan);
+                });
             });
         </script>
     @endpush

@@ -18,4 +18,14 @@ class Transaction extends Model
     {
         return $this->hasOne(User::class,'id','dokter_id');
     }
+
+    public function detailMedicine()
+    {
+        return $this->hasMany(TransactionDetail::class,'transaction_id','id')->whereNotNull('medicine_id');
+    }
+
+    public function detailService()
+    {
+        return $this->hasMany(TransactionDetail::class,'transaction_id','id')->whereNull('medicine_id');
+    }
 }

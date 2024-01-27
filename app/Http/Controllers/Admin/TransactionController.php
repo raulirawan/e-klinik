@@ -45,6 +45,35 @@ class TransactionController extends Controller
 
     public function detail(Transaction $transaction)
     {
-        return view('admin.transaction.detail', compact('transaction'));
+        $dataObat = [];
+        $dataLayanan = [];
+
+        $indexObat = 0;
+        $indexLayanan = 0;
+
+        foreach($transaction->detailMedicine as $value) {
+                $dataObat[] = [
+                    'index' => $indexObat,
+                    'medicine_price' => $value->price,
+                    'medicine_qty' => $value->qty,
+                ];
+                $indexObat++;
+        }
+
+        foreach($transaction->detailService as $value) {
+                 $dataLayanan[] = [
+                     'index' => $indexLayanan,
+                     'layanan_service_name' => $value->service_name,
+                     'layanan_qty' => $value->qty,
+                     'layanan_price' => $value->price,
+                 ];
+                 $indexLayanan++;
+         }
+        return view('admin.transaction.detail', compact('transaction','dataObat','dataLayanan'));
+    }
+
+    public function update(Request $request, Transaction $transaction)
+    {
+        dd($request->all());
     }
 }
