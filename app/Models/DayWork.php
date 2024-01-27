@@ -10,4 +10,9 @@ class DayWork extends Model
     use HasFactory;
 
     protected $table = 'day_works';
+
+    public function dokter()
+    {
+        return $this->hasOne(User::class,'id','dokter_id');
+    }
 }

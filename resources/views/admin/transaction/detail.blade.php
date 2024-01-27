@@ -91,7 +91,7 @@
                             <div class="form-group mb-3">
                                 <label for="basicInput">Rekam Medis</label>
                                 <textarea name="medical_records" id="medical_records" class="form-control" cols="30" rows="5"
-                                    placeholder="Rekam Medis"></textarea>
+                                    placeholder="Rekam Medis">{{ $transaction->medical_record ?? '' }}</textarea>
                             </div>
                             @if ($transaction->detailMedicine->isNotEmpty())
                                 <div class="form-group mb-3">
@@ -176,7 +176,7 @@
                                                 <div class="col">
                                                     <input type="text" id="layanan_service_name_{{ $loop->index }}"
                                                         class="form-control" value="{{ $value->service_name }}"
-                                                        name="layanan_service_name" placeholder="Nama Layanan" required>
+                                                        name="layanan_service_name[]" placeholder="Nama Layanan" required>
                                                 </div>
                                                 <div class="col">
                                                     <input type="number" id="layanan_qty_{{ $loop->index }}"
@@ -212,8 +212,8 @@
                                         <div class="row mt-3">
                                             <div class="col">
                                                 <input type="text" id="layanan_service_name_0" class="form-control"
-                                                    value="" name="layanan_service_name" placeholder="Nama Layanan"
-                                                    required>
+                                                    value="" name="layanan_service_name[]"
+                                                    placeholder="Nama Layanan" required>
                                             </div>
                                             <div class="col">
                                                 <input type="number" id="layanan_qty_0" class="form-control"
@@ -236,6 +236,7 @@
 
                         <div class="col-md-12">
                             <h3 class="mb-5 mt-4">Total Harga : <span id="total-price"></span></h3>
+                            <input type="hidden" name="total_price" id="total_price">
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
 
@@ -271,9 +272,8 @@
                     loadSelect(index);
                 }
 
-                console.log(indexLayanan);
-                if (dataLayanan.length == 0) {
-                    loadLayanan(indexLayanan);
+                if (dataLayanan.length > 0) {
+                    dataLayanan.forEach((el) => loadLayanan(el.index, 'old'));
                 }
 
                 function loadSelect(index) {
@@ -374,21 +374,22 @@
                         .layanan_qty));
                     var totalPrice = totalPriceMedicine + totalPriceLayanan;
                     $("#total-price").text(totalPrice);
-
-
+                    $("#total_price").val(totalPrice);
                     return totalPrice;
                 }
                 // for layanan
-                function loadLayanan(indexLayanan) {
-                    const tempData = {
-                        'index': indexLayanan,
-                        'layanan_service_name': null,
-                        'layanan_qty': 0,
-                        'layanan_price': 0,
-                    };
+                function loadLayanan(indexLayanan, status = 'new') {
 
-                    dataLayanan.push(tempData);
-                    console.log(dataLayanan);
+                    if (status != 'old') {
+                        const tempData = {
+                            'index': indexLayanan,
+                            'layanan_service_name': null,
+                            'layanan_qty': 0,
+                            'layanan_price': 0,
+                        };
+                        dataLayanan.push(tempData);
+                    }
+
                     $(`#layanan_service_name_${indexLayanan}`).bind('click keyup', function() {
                         objIndex = dataLayanan.findIndex((obj => obj.index == indexLayanan));
                         dataLayanan[objIndex].layanan_service_name = $(this).val();
@@ -410,7 +411,8 @@
 
                         calculateTotalPrice(data, dataLayanan);
                     });
-
+                    console.log(dataLayanan);
+                    console.log(indexLayanan);
                 }
 
                 $("#add-layanan").click(function(e) {
@@ -420,7 +422,7 @@
                         <div class="row mt-3">
                             <div class="col">
                                 <input type="text" id="layanan_service_name_${indexLayanan}" class="form-control" value=""
-                                    name="layanan_service_name" placeholder="Nama Layanan" required>
+                                    name="layanan_service_name[]" placeholder="Nama Layanan" required>
                             </div>
                             <div class="col">
                                 <input type="number" id="layanan_qty_${indexLayanan}" class="form-control" value=""

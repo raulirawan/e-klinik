@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/check-available', [HomeController::class,'checkAvailable'])->name('check-available');
+Route::post('/check-available', [HomeController::class,'checkAvailablePost'])->name('check-available.post');
+Route::post('/make-appointment', [HomeController::class,'makeAppointment'])->name('makeAppointment');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');

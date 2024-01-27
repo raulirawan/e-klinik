@@ -1,140 +1,1138 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html class="no-js" lang="en">
 
-        <title>Laravel</title>
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <!-- Page Title -->
+    <title>Nischinto - Medical landing page HTML template</title>
+    <!-- Favicon Icon -->
+    <link rel="icon" href="{{ asset('frontend') }}/assets/img/favicon.png" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/slick.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/lightgallery.min.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/animate.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/jQueryUi.min.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/textRotate.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/select2.min.css" />
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css" />
+</head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
+<body>
+    <div class="st-perloader">
+        <div class="st-perloader-in">
+            <div class="st-wave-first">
+                <svg enable-background="new 0 0 300.08 300.08" viewBox="0 0 300.08 300.08"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path
+                            d="m293.26 184.14h-82.877l-12.692-76.138c-.546-3.287-3.396-5.701-6.718-5.701-.034 0-.061 0-.089 0-3.369.027-6.199 2.523-6.677 5.845l-12.507 87.602-14.874-148.69c-.355-3.43-3.205-6.056-6.643-6.138-.048 0-.096 0-.143 0-3.39 0-6.274 2.489-6.752 5.852l-19.621 137.368h-9.405l-12.221-42.782c-.866-3.028-3.812-5.149-6.8-4.944-3.13.109-5.777 2.332-6.431 5.395l-8.941 42.332h-73.049c-3.771 0-6.82 3.049-6.82 6.82 0 3.778 3.049 6.82 6.82 6.82h78.566c3.219 0 6.002-2.251 6.67-5.408l4.406-20.856 6.09 21.313c.839 2.939 3.526 4.951 6.568 4.951h20.46c3.396 0 6.274-2.489 6.752-5.845l12.508-87.596 14.874 148.683c.355 3.437 3.205 6.056 6.643 6.138h.143c3.39 0 6.274-2.489 6.752-5.845l14.227-99.599 6.397 38.362c.546 3.287 3.396 5.702 6.725 5.702h88.66c3.771 0 6.82-3.049 6.82-6.82-.001-3.772-3.05-6.821-6.821-6.821z" />
+                    </g>
+                </svg>
+            </div>
+            <div class="st-wave-second">
+                <svg enable-background="new 0 0 300.08 300.08" viewBox="0 0 300.08 300.08"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path
+                            d="m293.26 184.14h-82.877l-12.692-76.138c-.546-3.287-3.396-5.701-6.718-5.701-.034 0-.061 0-.089 0-3.369.027-6.199 2.523-6.677 5.845l-12.507 87.602-14.874-148.69c-.355-3.43-3.205-6.056-6.643-6.138-.048 0-.096 0-.143 0-3.39 0-6.274 2.489-6.752 5.852l-19.621 137.368h-9.405l-12.221-42.782c-.866-3.028-3.812-5.149-6.8-4.944-3.13.109-5.777 2.332-6.431 5.395l-8.941 42.332h-73.049c-3.771 0-6.82 3.049-6.82 6.82 0 3.778 3.049 6.82 6.82 6.82h78.566c3.219 0 6.002-2.251 6.67-5.408l4.406-20.856 6.09 21.313c.839 2.939 3.526 4.951 6.568 4.951h20.46c3.396 0 6.274-2.489 6.752-5.845l12.508-87.596 14.874 148.683c.355 3.437 3.205 6.056 6.643 6.138h.143c3.39 0 6.274-2.489 6.752-5.845l14.227-99.599 6.397 38.362c.546 3.287 3.396 5.702 6.725 5.702h88.66c3.771 0 6.82-3.049 6.82-6.82-.001-3.772-3.05-6.821-6.821-6.821z" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- Start Header Section -->
+    <header class="st-site-header st-style1 st-sticky-header">
+        <div class="st-top-header">
+            <div class="container">
+                <div class="st-top-header-in">
+                    <ul class="st-top-header-list">
+                        <li>
+                            <svg enable-background="new 0 0 479.058 479.058" viewBox="0 0 479.058 479.058"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z" />
+                            </svg>
+                            <a href="#"><span class="__cf_email__"
+                                    data-cfemail="9df4f3fbf2ddf3f4eefef5f4f3e9f2b3fef2f0">[email&#160;protected]</span></a>
+                        </li>
+                        <li>
+                            <svg enable-background="new 0 0 512.021 512.021" viewBox="0 0 512.021 512.021"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path
+                                        d="m367.988 512.021c-16.528 0-32.916-2.922-48.941-8.744-70.598-25.646-136.128-67.416-189.508-120.795s-95.15-118.91-120.795-189.508c-8.241-22.688-10.673-46.108-7.226-69.612 3.229-22.016 11.757-43.389 24.663-61.809 12.963-18.501 30.245-33.889 49.977-44.5 21.042-11.315 44.009-17.053 68.265-17.053 7.544 0 14.064 5.271 15.645 12.647l25.114 117.199c1.137 5.307-.494 10.829-4.331 14.667l-42.913 42.912c40.482 80.486 106.17 146.174 186.656 186.656l42.912-42.913c3.837-3.837 9.36-5.466 14.667-4.331l117.199 25.114c7.377 1.581 12.647 8.101 12.647 15.645 0 24.256-5.738 47.224-17.054 68.266-10.611 19.732-25.999 37.014-44.5 49.977-18.419 12.906-39.792 21.434-61.809 24.663-6.899 1.013-13.797 1.518-20.668 1.519zm-236.349-479.321c-31.995 3.532-60.393 20.302-79.251 47.217-21.206 30.265-26.151 67.49-13.567 102.132 49.304 135.726 155.425 241.847 291.151 291.151 34.641 12.584 71.867 7.64 102.132-13.567 26.915-18.858 43.685-47.256 47.217-79.251l-95.341-20.43-44.816 44.816c-4.769 4.769-12.015 6.036-18.117 3.168-95.19-44.72-172.242-121.772-216.962-216.962-2.867-6.103-1.601-13.349 3.168-18.117l44.816-44.816z" />
+                                    <path
+                                        d="m496.02 272c-8.836 0-16-7.164-16-16 0-123.514-100.486-224-224-224-8.836 0-16-7.164-16-16s7.164-16 16-16c68.381 0 132.668 26.628 181.02 74.98s74.98 112.639 74.98 181.02c0 8.836-7.163 16-16 16z" />
+                                    <path
+                                        d="m432.02 272c-8.836 0-16-7.164-16-16 0-88.224-71.776-160-160-160-8.836 0-16-7.164-16-16s7.164-16 16-16c105.869 0 192 86.131 192 192 0 8.836-7.163 16-16 16z" />
+                                    <path
+                                        d="m368.02 272c-8.836 0-16-7.164-16-16 0-52.935-43.065-96-96-96-8.836 0-16-7.164-16-16s7.164-16 16-16c70.58 0 128 57.42 128 128 0 8.836-7.163 16-16 16z" />
+                                </g>
+                            </svg>
+                            <a href="#">+01 - 234 567 890</a>
+                        </li>
+                    </ul>
+                    <ul class="st-social-btn st-style1 st-mp0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
                 </div>
-            @endif
-
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
-
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
+            </div>
+        </div>
+        <div class="st-main-header">
+            <div class="container">
+                <div class="st-main-header-in">
+                    <div class="st-main-header-left">
+                        <a class="st-site-branding" href="index.html"><img
+                                src="{{ asset('frontend') }}/assets/img/logo.png" alt="Nischinto"></a>
                     </div>
-                </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
+                    <div class="st-main-header-right">
+                        <div class="st-nav">
+                            <ul class="st-nav-list st-onepage-nav">
+                                <li><a href="#home" class="st-smooth-move">Home</a></li>
+                                <li><a href="#about" class="st-smooth-move">About</a></li>
+                                <li><a href="#doctors" class="st-smooth-move">Doctors</a></li>
+                                <li><a href="#gallery" class="st-smooth-move">Gallery</a></li>
+                                <ul>
+                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-no-sidebar.html">Blog No Sidebar</a></li>
+                                    <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
+                                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                    <li><a href="blog-details-no-sidebar.html">Blog Details No Sidebar</a></li>
+                                </ul>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </header>
+    <!-- End Header Section -->
+
+    <div class="st-content">
+        <div class="st-height-b125 st-height-lg-b80" id="home"></div>
+        <!-- Start Hero Seciton -->
+        <div class="st-hero-wrap st-color1 st-bg st-dynamic-bg overflow-hidden"
+            data-src="{{ asset('frontend') }}/assets/img/hero-bg11.jpg">
+            <div class="st-hero st-style1 st-type1">
+                <div class="container">
+                    <div class="st-hero-text">
+                        <h1 class="st-hero-title">Always Laugh <br>When you Can.</h1>
+                        <!-- <h1 class="st-hero-title">Wellness Builds <br>Upon the Medical.</h1> -->
+                        <!-- <h1 class="st-hero-title">Way to get happy. <br>Best promises.</h1> -->
+                        <div class="st-hero-subtitle">Lorem ipsum dolor sit amet, consectetur mag. <br> Tempor
+                            incididunt ut labore et dolore elit.</div>
+                        <div class="st-hero-btn">
+                            <a href="#department" class="st-btn st-style1 st-color3 st-smooth-move">Departments</a>
+                        </div>
+                    </div>
+                    <form method="GET" action="{{ route('check-available') }}" class="st-appointment-form" id="appointment-form">
+                        <div class="st-wave-animation st-white"></div>
+                        <h2 class="st-appointment-form-title text-center">Make an Appointment</h2>
+                        <div id="st-alert1"></div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="st-form-field st-style1">
+                                    <input name="date" type="text" id="udate" placeholder="dd/mm/yy">
+                                    <div class="form-field-icon"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button class="st-btn st-style1 st-color1 st-size-medium w-100" type="submit"
+                                    id="appointment-submit">Check Available Doctors</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Hero Seciton -->
+
+        <!-- Start Feature Seciton -->
+        <section>
+            <div class="st-height-b120 st-height-lg-b80"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="st-iconbox st-style1 st-type2">
+                            <div class="st-iconbox-icon st-purple-box">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                    xml:space="preserve">
+                                    <g>
+                                        <path d="M482.726,485.783l-22.65-132.603c-2.441-14.287-12.576-25.764-26.453-29.95l-61.092-18.433
+                      c-1.265-14.934-7.388-29.023-17.578-40.175c-8.151-8.92-18.403-15.415-29.704-18.999c1.934-2.146,3.727-4.285,5.372-6.377
+                      c14.528-18.477,22.306-38.833,24.286-52.724h4.713c12.258,0,22.231-9.972,22.231-22.231v-11.396
+                      c0-8.181-4.602-15.594-11.523-19.441V106.05c0-4.141-3.357-7.498-7.498-7.498s-7.497,3.356-7.497,7.498v30.764
+                      c-2.92,0.507-6.404,1.383-9.968,2.884c-0.365,0.133-0.72,0.287-1.056,0.472c-0.805,0.367-1.611,0.754-2.414,1.19V80.938
+                      c0-16.693-13.58-30.273-30.273-30.273h-20.695c-7.138,0-14.111,2.487-19.637,7.005l-2.031,1.66c-3.73,3.05-8.438,4.73-13.257,4.73
+                      c-4.819,0-9.528-1.68-13.258-4.73l-2.03-1.66c-5.526-4.517-12.499-7.005-19.637-7.005H200.38
+                      c-16.693,0-30.273,13.58-30.273,30.273v60.422c-0.803-0.436-1.609-0.823-2.414-1.19c-0.336-0.185-0.69-0.339-1.055-0.472
+                      c-3.564-1.501-7.049-2.377-9.968-2.884V59.025c0-24.278,19.752-44.03,44.03-44.03h110.601c24.279,0,44.03,19.752,44.03,44.03
+                      v11.786c0,4.141,3.357,7.498,7.497,7.498s7.498-3.356,7.498-7.498V59.025C370.326,26.479,343.847,0,311.301,0H200.7
+                      c-32.547,0-59.025,26.479-59.025,59.025v74.43c-6.921,3.847-11.523,11.259-11.523,19.441v11.396
+                      c0,12.259,9.973,22.231,22.231,22.231h4.713c1.979,13.891,9.758,34.247,24.286,52.724c1.643,2.09,3.435,4.227,5.367,6.371
+                      c-25.98,8.252-44.926,31.61-47.277,59.179L78.378,323.23c-13.877,4.186-24.013,15.663-26.453,29.95l-9.198,53.849
+                      c-0.697,4.082,2.047,7.955,6.128,8.652c4.08,0.699,7.955-2.046,8.653-6.128l9.198-53.849c1.476-8.644,7.608-15.586,16.003-18.118
+                      l56.505-17.049v14.831c-12.952,2.384-23.973,11.281-28.512,23.608c-1.205,3.272-1.954,6.698-2.226,10.182l-5.461,70.095
+                      c-0.412,5.28,1.415,10.538,5.01,14.423c3.595,3.886,8.694,6.116,13.989,6.116h9.348c4.141,0,7.498-3.356,7.498-7.498
+                      c0-4.142-3.357-7.497-7.498-7.497h-9.348c-1.129,0-2.215-0.474-2.982-1.304c-0.766-0.828-1.155-1.948-1.067-3.073l5.461-70.096
+                      c0.165-2.111,0.618-4.186,1.348-6.167c3.158-8.575,11.686-14.382,21.223-14.449l1.235-0.009c0.058-0.001,0.115-0.001,0.172-0.001
+                      c9.269,0,17.474,5.256,20.935,13.427c0.971,2.291,1.561,4.713,1.755,7.199l5.463,70.097c0.087,1.124-0.302,2.244-1.068,3.073
+                      c-0.766,0.828-1.853,1.303-2.982,1.303h-9.348c-4.141,0-7.498,3.356-7.498,7.497c0,4.141,3.357,7.498,7.498,7.498h9.348
+                      c5.295,0,10.395-2.229,13.989-6.116c3.596-3.887,5.423-9.144,5.011-14.422l-5.463-70.096c-0.32-4.102-1.295-8.101-2.898-11.884
+                      c-4.939-11.657-15.5-19.762-27.938-21.955v-19.306l25.774-7.777c2.345,4.939,6.992,15.612,16.197,38.619
+                      c9.277,23.214,20.808,52.969,31.867,81.895c0.079,0.243,0.17,0.48,0.272,0.712c7.38,19.311,14.539,38.225,20.662,54.541
+                      c1.098,2.926,3.895,4.864,7.02,4.864c3.125,0,5.922-1.938,7.02-4.864c6.122-16.316,13.281-35.23,20.662-54.541
+                      c0.103-0.232,0.193-0.47,0.272-0.712c11.051-28.909,22.576-58.645,31.849-81.852c9.217-23.037,13.868-33.719,16.214-38.662
+                      l25.774,7.777v44.285c-17.858,3.469-31.385,19.219-31.385,38.077c0,21.391,17.403,38.795,38.795,38.795
+                      c21.392,0,38.795-17.403,38.795-38.795c0-18.796-13.438-34.508-31.21-38.045v-39.792l56.506,17.049
+                      c8.395,2.532,14.526,9.474,16.003,18.118l22.65,132.603c0.376,2.199-0.209,4.349-1.648,6.054c-1.438,1.704-3.459,2.644-5.69,2.644
+                      H51.393c-2.231,0-4.251-0.939-5.69-2.644c-1.438-1.705-2.024-3.854-1.648-6.054l7.475-43.762c0.697-4.082-2.047-7.955-6.128-8.652
+                      c-4.08-0.7-7.955,2.047-8.653,6.128l-7.475,43.762c-1.115,6.532,0.696,13.183,4.968,18.248C38.516,509.096,44.767,512,51.393,512
+                      h409.214c6.626,0,12.878-2.904,17.151-7.969C482.03,498.966,483.841,492.315,482.726,485.783z M355.421,152.089
+                      c3.995-0.996,7.202-0.978,7.238-0.977c1.292,0.017,2.548-0.285,3.664-0.87c0.334,0.831,0.531,1.724,0.531,2.654v11.396
+                      c0,3.99-3.246,7.236-7.236,7.236h-4.197V152.089z M156.579,171.528L156.579,171.528h-4.197c-3.99,0-7.236-3.246-7.236-7.236
+                      v-11.396c0-0.93,0.198-1.823,0.531-2.653c1.115,0.585,2.371,0.887,3.664,0.869c0.057,0.01,3.255-0.008,7.238,0.981V171.528z
+                       M171.574,179.935v-19.698c2.272,0.681,4.757,0.588,7.051-0.369c3.935-1.642,6.477-5.455,6.477-9.716V80.938
+                      c0-8.424,6.854-15.278,15.278-15.278h20.695c3.688,0,7.291,1.285,10.146,3.619l2.03,1.66c6.401,5.234,14.48,8.115,22.749,8.115
+                      c8.269,0,16.348-2.882,22.749-8.115l2.03-1.66c2.854-2.334,6.458-3.619,10.146-3.619h20.695c8.424,0,15.278,6.854,15.278,15.278
+                      v69.215c0,4.26,2.542,8.074,6.477,9.716c1.314,0.548,2.69,0.814,4.054,0.814c1.017,0,2.026-0.149,2.997-0.439v19.691
+                      c0,10.947-7.568,32.205-21.594,50.043c-4.646,5.909-10.618,12.257-17.971,17.805c-0.233,0.156-0.456,0.325-0.669,0.505
+                      c-11.391,8.422-26.038,14.874-44.192,14.874s-32.801-6.452-44.193-14.875c-0.213-0.179-0.435-0.348-0.667-0.503
+                      c-7.353-5.549-13.325-11.897-17.972-17.806C179.143,212.141,171.574,190.882,171.574,179.935z M305.12,301.07L256,337.784
+                      l-49.12-36.714c4.871-6.191,7.6-14.138,7.6-21.23v-12.086c11.551,6.212,25.334,10.404,41.52,10.404s29.97-4.192,41.52-10.404
+                      v12.086C297.52,286.932,300.249,294.879,305.12,301.07z M194.367,292.701c-4.004-1.525-8.443-1.775-12.642-0.636
+                      c-0.184,0.043-0.364,0.092-0.539,0.144l-25.903,7.816c4.381-21.542,21.873-38.688,44.202-42.009v21.824
+                      C199.485,284.544,197.385,289.407,194.367,292.701z M214.716,352.889c-0.014-0.035-0.028-0.07-0.041-0.104
+                      c-0.38-0.961-0.755-1.909-1.127-2.846c-0.067-0.17-0.134-0.339-0.201-0.507c-0.364-0.917-0.725-1.827-1.081-2.722
+                      c-0.025-0.063-0.05-0.125-0.075-0.189c-1.111-2.793-2.182-5.472-3.212-8.039c-0.075-0.186-0.15-0.375-0.225-0.56
+                      c-0.296-0.736-0.587-1.461-0.876-2.177c-0.106-0.263-0.211-0.523-0.316-0.783c-0.28-0.694-0.558-1.384-0.832-2.059
+                      c-0.082-0.202-0.162-0.398-0.243-0.599c-0.497-1.226-0.983-2.421-1.457-3.586c-0.128-0.315-0.259-0.636-0.386-0.947
+                      c-0.186-0.454-0.367-0.896-0.549-1.341c-0.196-0.48-0.392-0.956-0.584-1.424c-0.072-0.175-0.147-0.36-0.219-0.534
+                      c-0.058-0.14-0.111-0.269-0.168-0.408c-0.866-2.104-1.689-4.087-2.47-5.952c-0.006-0.015-0.013-0.03-0.019-0.045
+                      c-0.416-0.993-0.823-1.963-1.214-2.887c-0.203-0.479-0.403-0.95-0.599-1.412l42.245,31.574l-17.652,7.499
+                      c-0.031,0.013-0.063,0.026-0.094,0.04l-7.37,3.131C215.533,354.955,215.124,353.919,214.716,352.889z M232.606,398.797
+                      c-1.481-3.843-2.973-7.708-4.468-11.569c-2.338-6.039-4.571-11.781-6.708-17.251l2.798-1.189l11.432,13.289L232.606,398.797z
+                       M256.145,459.735c-0.215-0.446-0.471-0.867-0.767-1.259c-3.388-8.955-7.688-20.286-12.447-32.753l7-38.325h12.138l7,38.325
+                      C264.082,438.784,259.603,450.594,256.145,459.735z M264.881,372.404h-17.762l-8.405-9.77L256,355.291l17.286,7.343
+                      L264.881,372.404z M283.862,387.228c-1.495,3.861-2.987,7.726-4.468,11.569l-3.054-16.721l11.432-13.289l2.798,1.189
+                      C288.433,375.446,286.2,381.189,283.862,387.228z M312.58,315.18c-0.371,0.876-0.757,1.795-1.15,2.733
+                      c-0.051,0.122-0.103,0.245-0.154,0.368c-0.389,0.93-0.785,1.88-1.195,2.869c-0.027,0.065-0.055,0.134-0.082,0.2
+                      c-0.354,0.853-0.717,1.733-1.086,2.63c-0.069,0.168-0.134,0.323-0.203,0.492c-0.082,0.201-0.17,0.414-0.253,0.617
+                      c-0.164,0.4-0.331,0.808-0.499,1.216c-0.206,0.503-0.411,1.004-0.622,1.519c-0.067,0.164-0.136,0.335-0.204,0.5
+                      c-0.522,1.279-1.058,2.597-1.606,3.951c-0.086,0.212-0.171,0.42-0.257,0.635c-0.271,0.669-0.547,1.352-0.824,2.039
+                      c-0.108,0.269-0.217,0.537-0.326,0.809c-0.286,0.709-0.575,1.427-0.867,2.155c-0.082,0.203-0.165,0.411-0.247,0.615
+                      c-1.017,2.532-2.072,5.173-3.167,7.925c-0.036,0.091-0.072,0.18-0.108,0.272c-0.354,0.889-0.712,1.793-1.074,2.704
+                      c-0.067,0.17-0.135,0.34-0.203,0.511c-0.374,0.942-0.751,1.894-1.133,2.861c-0.007,0.018-0.014,0.036-0.021,0.053
+                      c-0.412,1.042-0.826,2.09-1.248,3.16l-7.377-3.134c-0.026-0.011-0.052-0.022-0.077-0.033l-17.662-7.503l42.245-31.574
+                      C312.982,314.23,312.782,314.7,312.58,315.18z M330.814,292.21c-0.001,0-0.003-0.001-0.004-0.001
+                      c-0.006-0.002-0.013-0.003-0.019-0.006c-4.35-1.305-8.99-1.089-13.157,0.498c-3.019-3.294-5.118-8.157-5.118-12.861v-21.835
+                      c22.469,3.312,39.908,20.297,44.232,42.029L330.814,292.21z M389.001,398.375c0,13.124-10.677,23.8-23.8,23.8
+                      s-23.8-10.676-23.8-23.8c0-13.124,10.677-23.8,23.8-23.8S389.001,385.251,389.001,398.375z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h2 class="st-iconbox-title">Qualified Doctors</h2>
+                            <div class="st-iconbox-text">Lorem ipsum dolor sit amet consectet adipis sed do eiusmod
+                                tempor inc ididunt utid labore.</div>
+                        </div>
+                        <div class="st-height-b0 st-height-lg-b30"></div>
+                    </div>
+                    <!-- .col -->
+                    <div class="col-lg-4">
+                        <div class="st-iconbox st-style1 st-type2">
+                            <div class="st-iconbox-icon st-green-box">
+
+                                <svg enable-background="new 0 0 511.988 511.988" viewBox="0 0 511.988 511.988"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path
+                                            d="m511.988 227.658c0-60.096-23.44-116.593-66.004-159.085-42.559-42.489-99.142-65.888-159.327-65.888-62.806 0-122.954 26.329-165.547 72.348-7.616-2.821-15.75-4.293-24.108-4.293-.001 0 .001 0 0 0-18.539 0-35.977 7.24-49.098 20.385-.274.275-.532.565-.772.87l-15.678 19.868c-14.987 18.993-25.114 41.58-29.285 65.318-4.207 23.943-2.269 48.627 5.605 71.384 5.707 16.494 12.887 29.151 21.342 37.622l193.83 194.143c6.704 6.717 16.109 12.686 27.956 17.74 17.668 7.539 36.431 11.233 55.167 11.232 31.195-.001 62.309-10.246 88.105-30.047l22.298-17.116c.348-.268.679-.558.989-.868 17.59-17.623 23.745-42.431 18.464-65.082 48.367-42.732 76.063-104.032 76.063-168.531zm-108.241 219.036-21.75 16.696c-35.571 27.305-82.795 33.545-123.246 16.285-9.479-4.044-16.763-8.578-21.65-13.474l-193.831-194.144c-6.301-6.313-11.885-16.418-16.596-30.032-13.829-39.97-6.173-83.997 20.48-117.773l15.301-19.391c9.295-9.111 21.541-14.121 34.546-14.121 13.19 0 25.599 5.155 34.941 14.514l32.021 32.081c18.41 18.444 18.41 48.454-.002 66.9l-35.863 35.951c-3.895 3.905-3.894 10.226.003 14.128l126.446 126.631c1.876 1.878 4.421 2.934 7.076 2.934h.003c2.656 0 5.202-1.058 7.077-2.938l35.86-35.948c8.919-8.936 20.767-13.857 33.36-13.857s24.44 4.921 33.36 13.857l32.021 32.081c19.135 19.17 19.282 50.268.443 69.62zm-15.287-112.803-3.021-3.026c-12.698-12.722-29.573-19.728-47.515-19.728-17.943 0-34.817 7.006-47.518 19.73l-28.786 28.857-112.313-112.479 28.812-28.883c25.359-25.407 26.159-66.243 2.401-92.624 27.711-28.735 66.034-45.095 106.137-45.095 81.209 0 147.276 65.95 147.276 147.014 0 40.189-16.496 78.547-45.473 106.234zm29.001 29.055-14.869-14.897c32.721-31.428 51.341-74.875 51.341-120.392 0-92.092-75.04-167.014-167.276-167.014-45.385 0-88.762 18.449-120.206 50.873l-20.353-20.391c-2.191-2.195-4.502-4.225-6.918-6.084 38.582-39.723 91.887-62.356 147.477-62.356 113.22 0 205.331 91.95 205.331 204.972 0 56.381-23.234 110.084-64.048 148.736-2.866-4.796-6.359-9.319-10.479-13.447z" />
+                                        <path
+                                            d="m355.669 228.279h-1.121c.121-21.045.184-43.537-.076-46.664-.586-7.056-4.823-12.807-10.796-14.65-5.923-1.828-12.211.471-16.822 6.152-4.979 6.136-27.961 47.742-34.886 60.347-1.702 3.098-1.642 6.864.158 9.907 1.8 3.042 5.072 4.908 8.606 4.908h33.681c-.041 5.609-.084 10.986-.125 15.844-.047 5.523 4.391 10.038 9.914 10.085.029.001.059.001.088.001 5.482 0 9.951-4.421 9.997-9.914.026-2.999.074-8.807.128-16.016h1.253c5.523 0 10-4.477 10-10 .001-5.523-4.477-10-9.999-10zm-21.125 0h-16.853c6.251-11.227 12.345-21.998 16.965-29.943-.004 8.206-.048 18.878-.112 29.943z" />
+                                        <path
+                                            d="m277.116 256.998c-8.794.111-18.124.184-25.861.199 4.857-6.523 11.614-15.793 20.75-28.902 5.593-8.025 9.24-15.609 10.84-22.541.375-1.584.688-4.6.689-5.647.018-17.91-14.528-32.48-32.385-32.48-15.444 0-28.809 11.02-31.779 26.204-1.06 5.42 2.474 10.673 7.895 11.733 5.419 1.059 10.673-2.475 11.733-7.895 1.138-5.819 6.248-10.042 12.151-10.042 6.649 0 12.09 5.307 12.373 11.938l-.272 2.136c-1.091 4.338-3.664 9.436-7.654 15.16-13.857 19.883-22.126 30.756-26.567 36.598-5.489 7.217-7.994 10.511-6.29 16.041 1.001 3.249 3.461 5.744 6.749 6.844 1.337.448 2.619.877 19.628.877 6.676 0 15.777-.066 28.251-.224 5.522-.069 9.943-4.603 9.873-10.125-.068-5.523-4.619-9.93-10.124-9.874z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h2 class="st-iconbox-title">24 Hours Service</h2>
+                            <div class="st-iconbox-text">Lorem ipsum dolor sit amet consectet adipis sed do eiusmod
+                                tempor inc ididunt utid labore.</div>
+                        </div>
+                        <div class="st-height-b0 st-height-lg-b30"></div>
+                    </div>
+                    <!-- .col -->
+                    <div class="col-lg-4">
+                        <div class="st-iconbox st-style1 st-type2">
+                            <div class="st-iconbox-icon st-red-box">
+                                <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m256 38.397c5.522 0 10-4.477 10-10v-18.397c0-5.523-4.478-10-10-10-5.523 0-10 4.477-10 10v18.397c0 5.523 4.477 10 10 10z" />
+                                                <path
+                                                    d="m342.609 62.764c1.556.88 3.246 1.298 4.915 1.298 3.486 0 6.874-1.827 8.713-5.079l9.655-17.069c2.719-4.807 1.026-10.908-3.78-13.628-4.806-2.718-10.909-1.027-13.628 3.781l-9.655 17.069c-2.719 4.807-1.026 10.908 3.78 13.628z" />
+                                                <path
+                                                    d="m409.789 128.753c1.634 0 3.292-.401 4.823-1.247l18.457-10.187c4.835-2.668 6.592-8.752 3.923-13.587-2.669-4.836-8.754-6.592-13.587-3.923l-18.457 10.187c-4.835 2.668-6.592 8.752-3.923 13.587 1.824 3.304 5.241 5.17 8.764 5.17z" />
+                                                <path
+                                                    d="m455.027 199.147h-19.524c-5.522 0-10 4.477-10 10s4.478 10 10 10h19.524c5.522 0 10-4.477 10-10s-4.477-10-10-10z" />
+                                                <path
+                                                    d="m155.763 58.983c1.84 3.252 5.227 5.079 8.713 5.079 1.668 0 3.359-.418 4.915-1.298 4.807-2.719 6.499-8.82 3.78-13.627l-9.655-17.069c-2.721-4.808-8.821-6.499-13.628-3.781-4.807 2.719-6.499 8.82-3.78 13.628z" />
+                                                <path
+                                                    d="m78.931 117.319 18.457 10.187c1.532.846 3.188 1.247 4.823 1.247 3.523 0 6.94-1.867 8.764-5.17 2.669-4.835.912-10.918-3.923-13.587l-18.457-10.187c-4.835-2.668-10.918-.913-13.587 3.923-2.669 4.835-.912 10.918 3.923 13.587z" />
+                                                <path
+                                                    d="m76.497 219.147c5.522 0 10-4.477 10-10s-4.478-10-10-10h-19.524c-5.522 0-10 4.477-10 10s4.478 10 10 10z" />
+                                                <path
+                                                    d="m448.091 446.815h-24.502v-61.428c0-5.523-4.478-10-10-10h-20.807v-171.08c0-75.405-61.347-136.752-136.813-136.752-75.405 0-136.752 61.347-136.752 136.752v171.081h-20.806c-5.522 0-10 4.477-10 10v61.428h-24.502c-5.522 0-10 4.477-10 10v45.184c0 5.523 4.478 10 10 10h384.182c5.523 0 10-4.477 10-10v-45.185c0-5.522-4.478-10-10-10zm-308.873-242.508c0-64.377 52.375-116.752 116.813-116.752 64.377 0 116.752 52.374 116.752 116.752v171.081h-86.683v-94.379c14.468-9.871 23.231-26.229 23.231-44.02 0-29.396-23.924-53.311-53.331-53.311s-53.331 23.915-53.331 53.311c0 17.79 8.764 34.148 23.232 44.02v94.379h-86.683zm101.326 62.204c-11.025-5.781-17.875-17.093-17.875-29.522 0-18.368 14.952-33.311 33.331-33.311s33.331 14.943 33.331 33.311c0 12.43-6.85 23.742-17.875 29.522-3.293 1.727-5.356 5.138-5.356 8.856v100.02h-20.2v-100.02c0-3.719-2.063-7.13-5.356-8.856zm197.547 225.489h-364.182v-25.185h136.885c5.523 0 10-4.477 10-10s-4.477-10-10-10h-102.383v-51.428h295.178v51.428h-102.383c-5.522 0-10 4.477-10 10s4.478 10 10 10h136.885z" />
+                                                <path
+                                                    d="m265.42 452.99c-1.61-3.865-5.581-6.387-9.771-6.16-4.161.225-7.816 3.098-9.029 7.08-1.212 3.978.243 8.471 3.606 10.938 3.284 2.409 7.764 2.601 11.23.458 4.105-2.538 5.822-7.856 3.964-12.316z" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h2 class="st-iconbox-title">Need Emergency</h2>
+                            <div class="st-iconbox-text">Lorem ipsum dolor sit amet consectet adipis sed do eiusmod
+                                tempor inc ididunt utid labore.</div>
+                        </div>
+                        <div class="st-height-b0 st-height-lg-b30"></div>
+                    </div>
+                    <!-- .col -->
+                </div>
+            </div>
+        </section>
+        <!-- End Feature Seciton -->
+
+        <!-- Start About Seciton -->
+        <section class="st-about-wrap" id="about">
+            <div class="st-shape-bg">
+                <img src="{{ asset('frontend') }}/assets/img/shape/about-bg-shape.svg" alt="shape">
+            </div>
+            <div class="st-height-b120 st-height-lg-b50"></div>
+            <div class="container">
+                <div class="st-section-heading st-style1">
+                    <h2 class="st-section-heading-title">Who We Are</h2>
+                    <div class="st-seperator">
+                        <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                        </div>
+                        <div class="st-seperator-center"><img src="{{ asset('frontend') }}/assets/img/icons/4.png"
+                                alt="icon"></div>
+                        <div class="st-seperator-right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+                        </div>
+                    </div>
+                    <div class="st-section-heading-subtitle">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. <br>Lorem Ipsum the industry's standard dummy text.</div>
+                </div>
+                <div class="st-height-b40 st-height-lg-b40"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="st-vertical-middle">
+                            <div class="st-vertical-middle-in">
+                                <div class="st-text-block st-style1">
+                                    <h2 class="st-text-block-title">A hospital is a health care institution providing
+                                        patient treatment with medical.</h2>
+                                    <div class="st-height-b20 st-height-lg-b20"></div>
+                                    <div class="st-text-block-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incidid unt labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamc laboris nisi ut aliquip.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incidid unt labore et dolore magna aliqua.</p>
+                                    </div>
+                                    <div class="st-height-b25 st-height-lg-b25"></div>
+                                    <div class="st-text-block-avatar">
+                                        <div class="st-avatar-img"><img
+                                                src="{{ asset('frontend') }}/assets/img/avatar1.png" alt="avatar">
+                                        </div>
+                                        <div class="st-avatar-info">
+                                            <h4 class="st-avatar-name">David Ambrose</h4>
+                                            <div class="st-avatar-designation">Founder & Director</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-height-b0 st-height-lg-b30"></div>
+                    </div>
+                    <!-- .col -->
+                    <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <div class="st-about-img">
+                            <div class="st-about-img-in st-dynamic-bg st-bg"
+                                data-src="{{ asset('frontend') }}/assets/img/hero-bg3.jpg">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .col -->
+                </div>
+            </div>
+        </section>
+        <!-- End About Seciton -->
+        <!-- Start Team Section -->
+        <section id="doctors">
+            <div class="st-height-b120 st-height-lg-b80"></div>
+            <div class="container">
+                <div class="st-section-heading st-style1">
+                    <h2 class="st-section-heading-title">Meet our specialists</h2>
+                    <div class="st-seperator">
+                        <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                        </div>
+                        <div class="st-seperator-center"><img src="{{ asset('frontend') }}/assets/img/icons/4.png"
+                                alt="icon"></div>
+                        <div class="st-seperator-right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+                        </div>
+                    </div>
+                    <div class="st-section-heading-subtitle">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. <br> Lorem Ipsum the industry's standard dummy text.</div>
+                </div>
+                <div class="st-height-b40 st-height-lg-b40"></div>
+            </div>
+            <div class="container">
+                <div class="st-slider st-style2">
+                    <div class="slick-container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0"
+                        data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="3"
+                        data-lg-slides="4" data-add-slides="4">
+                        <div class="slick-wrapper">
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member1.jpg" alt=""
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Philip
+                                                    Bailey</a></h3>
+                                            <div class="st-member-designation">Urology</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member2.jpg" alt="member2"
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Vera
+                                                    Hasson</a></h3>
+                                            <div class="st-member-designation">Cardiology</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member3.jpg" alt="member3"
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Matthew
+                                                    Hill</a></h3>
+                                            <div class="st-member-designation">Neurosurgery</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member4.jpg" alt="member4"
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Jeanette
+                                                    Hoff</a></h3>
+                                            <div class="st-member-designation">Surgery</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member1.jpg" alt=""
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Philip
+                                                    Bailey</a></h3>
+                                            <div class="st-member-designation">Urology</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member2.jpg" alt="member2"
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Vera
+                                                    Hasson</a></h3>
+                                            <div class="st-member-designation">Cardiology</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member3.jpg" alt="member3"
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Matthew
+                                                    Hill</a></h3>
+                                            <div class="st-member-designation">Neurosurgery</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-member st-style1 st-zoom">
+                                    <div class="st-member-img">
+                                        <img src="{{ asset('frontend') }}/assets/img/member4.jpg" alt="member4"
+                                            class="st-zoom-in">
+                                        <a class="st-doctor-link" href="doctor-profile.html"><i
+                                                class="fas fa-link"></i></a>
+                                        <div class="st-member-social-wrap">
+                                            <img src="{{ asset('frontend') }}/assets/img/shape/member-shape.svg"
+                                                alt="shape" class="st-member-social-bg">
+                                            <ul class="st-member-social st-mp0">
+                                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="st-member-meta">
+                                        <div class="st-member-meta-in">
+                                            <h3 class="st-member-name"><a href="doctor-profile.html">Dr. Jeanette
+                                                    Hoff</a></h3>
+                                            <div class="st-member-designation">Surgery</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                        </div>
+                    </div>
+                    <!-- .slick-container -->
+                    <div class="pagination st-style1 st-flex st-hidden"></div>
+                    <!-- If dont need Pagination then add class .st-hidden -->
+                    <div class="swipe-arrow st-style1">
+                        <!-- If dont need navigation then add class .st-hidden -->
+                        <div class="slick-arrow-left"><i class="fa fa-chevron-left"></i></div>
+                        <div class="slick-arrow-right"><i class="fa fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <!-- .st-slider -->
+            </div>
+            <!-- .container -->
+            <div class="st-height-b120 st-height-lg-b80"></div>
+        </section>
+        <!-- End Team Section -->
+        <hr>
+        <!-- Start gallery Section -->
+        <section id="gallery">
+            <div class="st-height-b120 st-height-lg-b80"></div>
+            <div class="container">
+                <div class="st-section-heading st-style1">
+                    <h2 class="st-section-heading-title">View our gallery</h2>
+                    <div class="st-seperator">
+                        <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                        </div>
+                        <div class="st-seperator-center"><img src="{{ asset('frontend') }}/assets/img/icons/4.png"
+                                alt="icon"></div>
+                        <div class="st-seperator-right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+                        </div>
+                    </div>
+                    <div class="st-section-heading-subtitle">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. <br> Lorem Ipsum the industry's standard dummy text.</div>
+                </div>
+                <div class="st-height-b40 st-height-lg-b40"></div>
+            </div>
+            <div class="container">
+                <div class="st-portfolio-wrapper">
+                    <div class="st-isotop-filter st-style1 text-center">
+                        <ul class="st-mp0">
+                            <li class="active"><a href="#" data-filter="*">All</a></li>
+                            <li><a href="#" data-filter=".cardiology">Cardiology</a></li>
+                            <li><a href="#" data-filter=".neurology">Neurology</a></li>
+                            <li><a href="#" data-filter=".urology">Urology</a></li>
+                            <li><a href="#" data-filter=".pulmonary">Pulmonary</a></li>
+                            <li><a href="#" data-filter=".traumatology">Traumatology</a></li>
+                        </ul>
+                    </div>
+                    <div class="st-isotop st-style1 st-port-col-3 st-has-gutter st-lightgallery">
+                        <div class="st-grid-sizer"></div>
+                        <div class="st-isotop-item cardiology urology">
+                            <a href="{{ asset('frontend') }}/assets/img/project1_lg.jpg"
+                                class="st-project st-zoom st-lightbox-item st-link-hover-wrap">
+                                <div class="st-project-img st-zoom-in"><img
+                                        src="{{ asset('frontend') }}/assets/img/project1.jpg" alt="project1"></div>
+                                <span class="st-link-hover"><i class="fas fa-arrows-alt"></i></span>
+                            </a>
+                        </div>
+                        <!-- .st-isotop-item -->
+
+                        <div class="st-isotop-item cardiology neurology">
+                            <a href="{{ asset('frontend') }}/assets/img/project2_lg.jpg"
+                                class="st-project st-zoom st-lightbox-item st-link-hover-wrap">
+                                <div class="st-project-img st-zoom-in"><img
+                                        src="{{ asset('frontend') }}/assets/img/project2.jpg" alt="project2"></div>
+                                <span class="st-link-hover"><i class="fas fa-arrows-alt"></i></span>
+                            </a>
+                        </div>
+                        <!-- .st-isotop-item -->
+
+                        <div class="st-isotop-item urology pulmonary">
+                            <a href="{{ asset('frontend') }}/assets/img/project3_lg.jpg"
+                                class="st-project st-zoom st-lightbox-item st-link-hover-wrap">
+                                <div class="st-project-img st-zoom-in"><img
+                                        src="{{ asset('frontend') }}/assets/img/project3.jpg" alt="project3"></div>
+                                <span class="st-link-hover"><i class="fas fa-arrows-alt"></i></span>
+                            </a>
+                        </div>
+                        <!-- .st-isotop-item -->
+
+                        <div class="st-isotop-item neurology traumatology">
+                            <a href="{{ asset('frontend') }}/assets/img/project4_lg.jpg"
+                                class="st-project st-zoom st-lightbox-item st-link-hover-wrap">
+                                <div class="st-project-img st-zoom-in"><img
+                                        src="{{ asset('frontend') }}/assets/img/project4.jpg" alt="project4"></div>
+                                <span class="st-link-hover"><i class="fas fa-arrows-alt"></i></span>
+                            </a>
+                        </div>
+                        <!-- .st-isotop-item -->
+
+                        <div class="st-isotop-item cardiology pulmonary">
+                            <a href="{{ asset('frontend') }}/assets/img/project5_lg.jpg"
+                                class="st-project st-zoom st-lightbox-item st-link-hover-wrap">
+                                <div class="st-project-img st-zoom-in"><img
+                                        src="{{ asset('frontend') }}/assets/img/project5.jpg" alt="project5"></div>
+                                <span class="st-link-hover"><i class="fas fa-arrows-alt"></i></span>
+                            </a>
+                        </div>
+                        <!-- .st-isotop-item -->
+
+                        <div class="st-isotop-item neurology traumatology">
+                            <a href="{{ asset('frontend') }}/assets/img/project6_lg.jpg"
+                                class="st-project st-zoom st-lightbox-item st-link-hover-wrap">
+                                <div class="st-project-img st-zoom-in"><img
+                                        src="{{ asset('frontend') }}/assets/img/project6.jpg" alt="project6"></div>
+                                <span class="st-link-hover"><i class="fas fa-arrows-alt"></i></span>
+                            </a>
+                        </div>
+                        <!-- .st-isotop-item -->
+
+                        <div class="st-isotop-item urology pulmonary traumatology">
+                            <a href="{{ asset('frontend') }}/assets/img/project7_lg.jpg"
+                                class="st-project st-zoom st-lightbox-item st-link-hover-wrap">
+                                <div class="st-project-img st-zoom-in"><img
+                                        src="{{ asset('frontend') }}/assets/img/project7.jpg" alt="project6"></div>
+                                <span class="st-link-hover"><i class="fas fa-arrows-alt"></i></span>
+                            </a>
+                        </div>
+                        <!-- .st-isotop-item -->
+                    </div>
+                    <!-- .isotop -->
+                </div>
+            </div>
+            <div class="st-height-b120 st-height-lg-b80"></div>
+        </section>
+        <!-- End gallery Section -->
+
+
+
+
+
+        <!-- Start FAQ Section -->
+        <section class="st-faq-wrap st-shape-wrap">
+            <div class="st-shape5">
+                <img src="{{ asset('frontend') }}/assets/img/shape/faq-bg.svg" alt="shape1">
+            </div>
+            <div class="st-height-b120 st-height-lg-b80"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="st-vertical-middle">
+                            <div class="st-vertical-middle-in">
+                                <div class="st-faq-img">
+                                    <img src="{{ asset('frontend') }}/assets/img/faq-img.png" alt="Faq Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-height-b0 st-height-lg-b30"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="st-accordian-heading">Just Answer the Questions</h2>
+                        <div class="st-accordian-wrap">
+                            <div class="st-accordian active ">
+                                <div class="st-accordian-title">
+                                    What is Medi solution?
+                                    <span class="st-accordian-toggle fa fa-angle-down"></span>
+                                </div>
+                                <div class="st-accordian-body">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                    since when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.</div>
+                            </div>
+                            <!-- .st-accordian -->
+                            <div class="st-accordian">
+                                <div class="st-accordian-title">
+                                    How do I get a refill on my prescription?
+                                    <span class="st-accordian-toggle fa fa-angle-down"></span>
+                                </div>
+                                <div class="st-accordian-body">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                    since when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.</div>
+                            </div>
+                            <!-- .st-accordian -->
+                            <div class="st-accordian">
+                                <div class="st-accordian-title">
+                                    How competent our total treatment?
+                                    <span class="st-accordian-toggle fa fa-angle-down"></span>
+                                </div>
+                                <div class="st-accordian-body">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                    since when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.</div>
+                            </div>
+                            <!-- .st-accordian -->
+                            <div class="st-accordian">
+                                <div class="st-accordian-title">
+                                    If I get sick what should I do?
+                                    <span class="st-accordian-toggle fa fa-angle-down"></span>
+                                </div>
+                                <div class="st-accordian-body">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                    since when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.</div>
+                            </div>
+                            <!-- .st-accordian -->
+                            <div class="st-accordian">
+                                <div class="st-accordian-title">
+                                    What is emergency cary to your hospital?
+                                    <span class="st-accordian-toggle fa fa-angle-down"></span>
+                                </div>
+                                <div class="st-accordian-body">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                    since when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book.</div>
+                            </div>
+                            <!-- .st-accordian -->
+                        </div>
+                        <!-- .st-accordian-wrap -->
+                    </div>
+                </div>
+            </div>
+            <div class="st-height-b120 st-height-lg-b80"></div>
+        </section>
+        <!-- End FAQ Section -->
+
+        <!-- Start Logo Carousel -->
+        <div class="st-gray-bg">
+            <div class="st-height-b120 st-height-lg-b80"></div>
+            <div class="container">
+                <div class="st-slider st-style2 st-pricing-wrap">
+                    <div class="slick-container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0"
+                        data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="3"
+                        data-lg-slides="4" data-add-slides="5">
+                        <div class="slick-wrapper">
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-orange-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client1.png" alt="client1">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-blue-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client2.png" alt="client2">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-red-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client3.png" alt="client3">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-green-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client4.png" alt="client4">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-dip-blue-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client5.png" alt="client5">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-orange-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client1.png" alt="client1">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-blue-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client2.png" alt="client2">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-red-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client3.png" alt="client3">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-green-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client4.png" alt="client4">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                            <div class="slick-slide-in">
+                                <div class="st-logo-carousel st-style1 st-dip-blue-box">
+                                    <img src="{{ asset('frontend') }}/assets/img/client5.png" alt="client5">
+                                </div>
+                            </div>
+                            <!-- .slick-slide-in -->
+                        </div>
+                    </div>
+                    <!-- .slick-container -->
+                    <div class="pagination st-style1 st-flex st-hidden"></div>
+                    <!-- If dont need Pagination then add class .st-hidden -->
+                    <div class="swipe-arrow st-style1">
+                        <!-- If dont need navigation then add class .st-hidden -->
+                        <div class="slick-arrow-left"><i class="fa fa-chevron-left"></i></div>
+                        <div class="slick-arrow-right"><i class="fa fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <!-- .st-slider -->
+            </div>
+            <div class="st-height-b120 st-height-lg-b80"></div>
+        </div>
+        <!-- End Logo Carousel -->
+
+        {{-- <!-- Start Contact Section -->
+        <section class="st-shape-wrap" id="contact">
+            <div class="st-shape1"><img src="{{ asset('frontend') }}/assets/img/shape/contact-shape1.svg" alt="shape1"></div>
+            <div class="st-shape2"><img src="{{ asset('frontend') }}/assets/img/shape/contact-shape2.svg" alt="shape2"></div>
+            <div class="st-height-b120 st-height-lg-b80"></div>
+            <div class="container">
+                <div class="st-section-heading st-style1">
+                    <h2 class="st-section-heading-title">Stay connect with us</h2>
+                    <div class="st-seperator">
+                        <div class="st-seperator-left wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
+                        <div class="st-seperator-center"><img src="{{ asset('frontend') }}/assets/img/icons/4.png" alt="icon"></div>
+                        <div class="st-seperator-right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
+                    </div>
+                    <div class="st-section-heading-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>Lorem Ipsum the industry's standard dummy text.</div>
+                </div>
+                <div class="st-height-b40 st-height-lg-b40"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div id="st-alert"></div>
+                        <form action="{{ asset('frontend') }}/assets/php/mail.php" class="row st-contact-form st-type1" method="post" id="contact-form">
+                            <div class="col-lg-6">
+                                <div class="st-form-field st-style1">
+                                    <label>Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Jhon Doe" required>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-6">
+                                <div class="st-form-field st-style1">
+                                    <label>Email Address</label>
+                                    <input type="text" id="email" name="email" placeholder="example@gmail.com" required>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-6">
+                                <div class="st-form-field st-style1">
+                                    <label>Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="Write subject" required>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-6">
+                                <div class="st-form-field st-style1">
+                                    <label>Phone</label>
+                                    <input type="text" id="phone" name="phone" placeholder="+00 376 12 465" required>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-12">
+                                <div class="st-form-field st-style1">
+                                    <label>Your Message</label>
+                                    <textarea cols="30" rows="10" id="msg" name="msg" placeholder="Write something here..." required></textarea>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <div class="st-height-b10 st-height-lg-b10"></div>
+                                    <button class="st-btn st-style1 st-color1 st-size-medium" type="submit" id="submit" name="submit">Send message</button>
+                                </div>
+                            </div>
+                            <!-- .col -->
+                        </form>
+                    </div>
+                    <!-- .col -->
+                </div>
+            </div>
+            <div class="st-height-b120 st-height-lg-b80"></div>
+        </section>
+        <!-- End Contact Section --> --}}
+
+
+    </div>
+    <!-- Start Footer -->
+    <footer class="st-site-footer st-sticky-footer st-dynamic-bg"
+        data-src="{{ asset('frontend') }}/assets/img/footer-bg.png">
+        <div class="st-main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="st-footer-widget">
+                            <div class="st-text-field">
+                                <img src="{{ asset('frontend') }}/assets/img/footer-logo.png" alt="Nischinto"
+                                    class="st-footer-logo">
+                                <div class="st-height-b25 st-height-lg-b25"></div>
+                                <div class="st-footer-text">Lorem ipsum dolor sit consectet adipisicing sed do eiusmod
+                                    temp incididunt ut labore. Lorem Ipsum is simply dummy.</div>
+                                <div class="st-height-b25 st-height-lg-b25"></div>
+                                <ul class="st-social-btn st-style1 st-mp0">
+                                    <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .col -->
+                    <div class="col-lg-3">
+                        <div class="st-footer-widget">
+                            <h2 class="st-footer-widget-title">Useful Links</h2>
+                            <ul class="st-footer-widget-nav st-mp0">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>FAQs</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Blog</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Weekly timetable</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- .col -->
+                    <div class="col-lg-3">
+                        <div class="st-footer-widget">
+                            <h2 class="st-footer-widget-title">Departments</h2>
+                            <ul class="st-footer-widget-nav st-mp0">
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Rehabilitation</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Laboratory Analysis</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Face Lift Surgery</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Liposuction</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- .col -->
+                    <div class="col-lg-3">
+                        <div class="st-footer-widget">
+                            <h2 class="st-footer-widget-title">Contacts</h2>
+                            <ul class="st-footer-contact-list st-mp0">
+                                <li><span class="st-footer-contact-title">Address:</span> 1223 Fulton Street San Diego
+                                    CA 941-23 USA</li>
+                                <li><span class="st-footer-contact-title">Email:</span> <a
+                                        href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="b0ded9c3d3d8d9dec4dff0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</a>
+                                </li>
+                                <li><span class="st-footer-contact-title">Phone:</span> (+01) - 234 567 890 <br>(+01) -
+                                    345 678 901</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- .col -->
+                </div>
+            </div>
+        </div>
+        <div class="st-copyright-wrap">
+            <div class="container">
+                <div class="st-copyright-in">
+                    <div class="st-left-copyright">
+                        <div class="st-copyright-text">Copyright 2021. Design by Laralink</div>
+                    </div>
+                    <div class="st-right-copyright">
+                        <div id="st-backtotop"><i class="fas fa-angle-up"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Video Popup -->
+    <div class="st-video-popup">
+        <div class="st-video-popup-overlay"></div>
+        <div class="st-video-popup-content">
+            <div class="st-video-popup-layer"></div>
+            <div class="st-video-popup-container">
+                <div class="st-video-popup-align">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="about:blank"></iframe>
+                    </div>
+                </div>
+                <div class="st-video-popup-close"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Video Popup -->
+
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/isotope.pkg.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/jquery.slick.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/mailchimp.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/counter.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/lightgallery.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/ripples.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/wow.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/jQueryUi.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/textRotate.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/select2.min.js"></script>
+    <script src="{{ asset('frontend') }}/assets/js/main.js"></script>
+</body>
+
 </html>
