@@ -28,6 +28,8 @@ class TransactionController extends Controller
                 ->editColumn('status', function ($row) {
                     if ($row->status == 'PENDING') {
                         return '<span class="badge bg-warning">PENDING</span>';
+                    } elseif ($row->status == 'MENUNGGU PEMBAYARAN') {
+                        return '<span class="badge bg-warning">MENUNGGU PEMBAYARAN</span>';
                     } elseif ($row->status == 'PAID') {
                         return '<span class="badge bg-success">PAID</span>';
                     } else {

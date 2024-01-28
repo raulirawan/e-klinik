@@ -54,6 +54,11 @@
                                     <span class="badge bg-warning">PENDING</span>
 
                                 </td>
+                            @elseif($transaction->status == 'MENUNGGU PEMBAYARAN')
+                                <td>
+                                    <span class="badge bg-warning">MENUNGGU PEMBAYARAN</span>
+
+                                </td>
                             @else
                                 <td>
                                     <span class="badge bg-danger">CANCEL</span>

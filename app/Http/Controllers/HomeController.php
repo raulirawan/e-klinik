@@ -9,7 +9,10 @@ use Carbon\Carbon;
 use App\Helpers\Helper;
 use App\Models\DayWork;
 use App\Models\Transaction;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -74,6 +77,23 @@ class HomeController extends Controller
 
     public function makeAppointment(Request $request)
     {
-        dd($request->all());
+        // create transaction
+        $transaction = new Transaction();
+        $transaction->user_id = Auth::user()->id;
+        $transaction->dokter_id = $request->dokter_id;
+        $transaction->booking_date = $request->booking_date;
+        $transaction->day = $request->day;
+        $transaction->time = $request->time . ':00';
+        $transaction->code = Str::upper(Str::random(5));
+        $transaction->status = 'PENDING';
+        $transaction->save();
+
+        if ($transaction) {
+            Alert::success('Success', 'Berhasil Membuat Jadwal Konsultasi!');
+            return redirect()->route('pasien.transaction.index');
+        } else {
+            Alert::error('Error', 'Gagal Membuat Jadwal Konsultasi, Coba Lagi!');
+            return redirect()->back();
+        }
     }
 }
