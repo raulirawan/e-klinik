@@ -13,6 +13,9 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Detail Transaction</h5>
+                @if (Auth::user()->roles == 'APOTEKER')
+                    <a  class="btn btn-success mb-3" href="{{ route('apoteker.transaction.update.status', $transaction->id) }}" onclick="return confirm('Yakin ?')">Kunci Data</a>
+                @endif
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
@@ -242,11 +245,14 @@
                         <div class="col-md-12">
                             <h3 class="mb-5 mt-4">Total Harga : <span id="total-price"></span></h3>
                             <input type="hidden" name="total_price" id="total_price">
+                            @if ($transaction->status == 'PENDING' || $transaction->status == 'MENUNGGU PEMBAYARAN')
                             <button type="submit" class="btn btn-primary">Simpan</button>
+                            @endif
                         </div>
 
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
@@ -279,6 +285,8 @@
 
                 if (dataLayanan.length > 0) {
                     dataLayanan.forEach((el) => loadLayanan(el.index, 'old'));
+                }else {
+                    loadLayanan(indexLayanan);
                 }
 
                 function loadSelect(index) {

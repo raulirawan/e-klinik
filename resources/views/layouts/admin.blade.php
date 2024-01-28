@@ -146,7 +146,7 @@
                             </li>
 
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="#" aria-expanded="false">
+                                <a class="sidebar-link" href="{{ route('dokter.transaction.index') }}" aria-expanded="false">
                                     <span>
                                         <i class="ti ti-login"></i>
                                     </span>
@@ -214,7 +214,7 @@
                             <span class="hide-menu">Manejemen Trannsaksi</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ route('apoteker.transaction.index') }}" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-login"></i>
                                 </span>
@@ -261,7 +261,7 @@
                         <span class="hide-menu">Manejemen Trannsaksi</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                        <a class="sidebar-link" href="{{ route("pasien.transaction.index") }}" aria-expanded="false">
                             <span>
                                 <i class="ti ti-login"></i>
                             </span>

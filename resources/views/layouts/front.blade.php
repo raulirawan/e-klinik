@@ -25,6 +25,16 @@
 
     @stack('stlyes')
     <!-- Bootstrap-datepicker JS -->
+    <style>
+        .dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+    </style>
 
 </head>
 
@@ -106,15 +116,27 @@
                                 <li><a href="#about" class="st-smooth-move">About</a></li>
                                 <li><a href="#doctors" class="st-smooth-move">Doctors</a></li>
                                 <li><a href="#gallery" class="st-smooth-move">Gallery</a></li>
-                                <ul>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-no-sidebar.html">Blog No Sidebar</a></li>
-                                    <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
-                                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
-                                    <li><a href="blog-details-no-sidebar.html">Blog Details No Sidebar</a></li>
-                                </ul>
+                                @guest
+                                <li><a href="{{ route('login') }}" class="st-smooth-move">Masuk</a></li>
+                                <li><a href="{{ route('register') }}" class="st-smooth-move">Daftar</a></li>
+                                @endguest
+                                @auth
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-target="#navbar" aria-expanded="false">
+                                      {{ Auth::user()->name }}
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="{{ route('pasien.dashboard') }}">Dashboard</a></li>
+                                      <li><a class="dropdown-item" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();" href="{{ route('logout') }}">Logout</a></li>
+                                    </ul>
+                                  </li>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                  class="d-none">
+                                  @csrf
+                              </form>
                                 </li>
+                                @endauth
                             </ul>
                         </div>
                     </div>

@@ -25,7 +25,7 @@
                             </tr>
                         </thead>
                         <tbody></tbody>
-                        @if (Auth::user()->roles != 'PASIEN')
+                        @if (Auth::user()->roles == 'ADMIN')
                             <tfoot>
                                 <tr>
                                     <th></th>

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Apoteker;
 
 use Carbon\Carbon;
+use App\Models\Medicine;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Medicine;
 use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -37,7 +37,7 @@ class TransactionController extends Controller
                     }
                 })
                 ->addColumn('action', function ($row) {
-                    $btn = '<a href="' . route('admin.transaction.detail', $row->id) . '" class="btn btn-info btn-sm"><i class="bi bi-trash"></i> Detail</a>
+                    $btn = '<a href="' . route('apoteker.transaction.detail', $row->id) . '" class="btn btn-info btn-sm"><i class="bi bi-trash"></i> Detail</a>
                     ';
 
                     return $btn;
@@ -89,7 +89,7 @@ class TransactionController extends Controller
             $medicine = Medicine::find($medicineId);
             if ($data['medicine_qty'][$key] > $medicine->stock) {
                 Alert::error("Error", 'Stock Obat ' . $medicine->name . ' Tidak Cukup!, Coba Lagi!');
-                return redirect()->route('admin.transaction.detail', $transaction->id);
+                return redirect()->route('dokter.transaction.detail', $transaction->id);
             }
             $dataTransactionDetails[] = [
                 'transaction_id' => $transaction->id,
@@ -126,7 +126,7 @@ class TransactionController extends Controller
         } else {
             Alert::error("Error", 'Data Gagal Di Simpan!');
         }
-        return redirect()->route('admin.transaction.detail', $transaction->id);
+        return redirect()->route('dokter.transaction.detail', $transaction->id);
     }
 
     public function updateStatus(Transaction $transaction)
@@ -138,6 +138,6 @@ class TransactionController extends Controller
         } else {
             Alert::error("Error", 'Data Gagal Di Update!');
         }
-        return redirect()->route('admin.transaction.detail', $transaction->id);
+        return redirect()->route('apoteker.transaction.detail', $transaction->id);
     }
 }

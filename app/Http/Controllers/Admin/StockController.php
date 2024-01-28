@@ -44,9 +44,11 @@ class StockController extends Controller
         // find obat
         $obat = Medicine::where('id', $data['medicine_id'])->first();
 
-        if ($obat->stock < $data['stock']) {
-            Alert::error("Error", 'Stock Kurang, Coba Lagi!');
-            return redirect()->route('admin.stock.index');
+        if($data['status'] == 'KELUAR') {
+            if ($obat->stock < $data['stock']) {
+                Alert::error("Error", 'Stock Kurang, Coba Lagi!');
+                return redirect()->route('admin.stock.index');
+            }
         }
 
         if (Stock::create($data)) {

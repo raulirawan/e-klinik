@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MidtransController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,12 +64,17 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('transaction', [App\Http\Controllers\Admin\TransactionController::class, 'index'])->name('admin.transaction.index');
     Route::get('transaction/detail/{transaction}', [App\Http\Controllers\Admin\TransactionController::class, 'detail'])->name('admin.transaction.detail');
     Route::post('transaction/update/{transaction}', [App\Http\Controllers\Admin\TransactionController::class, 'update'])->name('admin.transaction.update');
+    Route::get('transaction/update/status/{transaction}', [App\Http\Controllers\Admin\TransactionController::class, 'updateStatus'])->name('admin.transaction.update.status');
 });
 
 
 // for dokter
 Route::prefix('dokter')->middleware('auth')->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Dokter\DashboardController::class, 'index'])->name('dokter.dashboard');
+
+    Route::get('transaction', [App\Http\Controllers\Dokter\TransactionController::class, 'index'])->name('dokter.transaction.index');
+    Route::get('transaction/detail/{transaction}', [App\Http\Controllers\Dokter\TransactionController::class, 'detail'])->name('dokter.transaction.detail');
+    Route::post('transaction/update/{transaction}', [App\Http\Controllers\Dokter\TransactionController::class, 'update'])->name('dokter.transaction.update');
 });
 
 
@@ -88,6 +94,12 @@ Route::prefix('apoteker')->middleware('auth')->group(function () {
     Route::post('stock/create', [App\Http\Controllers\Apoteker\StockController::class, 'store'])->name('apoteker.stock.store');
     Route::post('stock/update/{stock}', [App\Http\Controllers\Apoteker\StockController::class, 'update'])->name('apoteker.stock.update');
     Route::get('stock/delete/{stock}', [App\Http\Controllers\Apoteker\StockController::class, 'delete'])->name('apoteker.stock.delete');
+
+
+    Route::get('transaction', [App\Http\Controllers\Apoteker\TransactionController::class, 'index'])->name('apoteker.transaction.index');
+    Route::get('transaction/detail/{transaction}', [App\Http\Controllers\Apoteker\TransactionController::class, 'detail'])->name('apoteker.transaction.detail');
+    Route::post('transaction/update/{transaction}', [App\Http\Controllers\Apoteker\TransactionController::class, 'update'])->name('apoteker.transaction.update');
+    Route::get('transaction/update/status/{transaction}', [App\Http\Controllers\Apoteker\TransactionController::class, 'updateStatus'])->name('apoteker.transaction.update.status');
 });
 
 
@@ -109,5 +121,7 @@ Route::prefix('ajax')->group(function () {
     Route::post('/get-medicine', [App\Http\Controllers\Admin\MedicineController::class, 'getMedicine']);
     Route::post('/get-medicine-detail', [App\Http\Controllers\Admin\MedicineController::class, 'getMedicineDetail']);
 });
+
+Route::post('midtrans/callback',[MidtransController::class,'callback']);
 
 Auth::routes();

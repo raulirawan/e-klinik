@@ -105,25 +105,35 @@
                                     <td>{{ number_format($value->price) }}</td>
                                 </tr>
                             @endforeach
+                            @if ($transaction->total_point_exchanged != 0)
+                                    <tr id="data-point">
+                                        <td>Point Di Tukar</td>
+                                        <td>-</td>
+                                        <td>{{ number_format($transaction->total_point_exchanged) }} <span class="text-danger">-</span></td>
+                                    </tr>
+                            @endif
                             <tr class="row-price">
                                 <td colspan="2">Total Yang Harus Di Bayar</td>
-                                <td id="total_price_text">{{ number_format($transaction->total_price) }}</td>
+                                <td id="total_price_text">{{ number_format($transaction->total_price - $transaction->total_point_exchanged) }}</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" value="true" id="pointSwitch"
-                            {{ Auth::user()->point <= 0 ? 'disabled' : '' }}>
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Point Anda
-                            {{ number_format(Auth::user()->point) }}</label>
-                        <div class="text-danger"><small>Anda Dapat Menggunakan Point Anda</small></div>
-                    </div>
-                    <form method="POST" action="{{ route('pasien.transaction.payment', $transaction->id) }}">
-                        <input type="hidden" id="total_price" name="total_price">
-                        <input type="hidden" id="total_point" name="total_point">
-                        <button class="btn btn-success mt-3" type="submit">Lakukan Pembayarran</button>
-                    </form>
+                    @if ($transaction->status == 'MENUNGGU PEMBAYARAN')
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" value="true" id="pointSwitch"
+                                {{ Auth::user()->point <= 0 ? 'disabled' : '' }}>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Point Anda
+                                {{ number_format(Auth::user()->point) }}</label>
+                            <div class="text-danger"><small>Anda Dapat Menggunakan Point Anda</small></div>
+                        </div>
+                        <form method="POST" action="{{ route('pasien.transaction.payment', $transaction->id) }}">
+                            @csrf
+                            <input type="hidden" id="total_price" value="{{ $transaction->total_price }}" name="total_price">
+                            <input type="hidden" id="total_point" value="0" name="total_point">
+                            <button class="btn btn-success mt-3" type="submit">Lakukan Pembayarran</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>
