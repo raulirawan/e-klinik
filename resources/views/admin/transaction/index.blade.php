@@ -7,7 +7,38 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
+
                 <h5 class="card-title fw-semibold mb-4">List Data Transaction</h5>
+                <form>
+                    <div class="row input-daterange ml-2 mt-2 mb-5">
+                        <div class="col-md-3">
+                            <label for="">Dari Tanggal</label>
+                            <input type="date" name="from_date" id="from_date" class="form-control datatable-input" data-col-index="0" value="{{ date('Y-m-d') }}"
+                                placeholder="From Date" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Sampai Tanggal</label>
+                            <input type="date" name="to_date" id="to_date" class="form-control datatable-input" data-col-index="0" value="{{ date('Y-m-d') }}"
+                                placeholder="To Date" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Status</label>
+                            <select name="status" id="status" class="form-control datatable-input" data-col-index="7">
+                                <option value="">Pilih Status</option>
+                                <option value="PAID">PAID</option>
+                                <option value="PENDING">PENDING</option>
+                                <option value="MENUNGGU PEMBAYARAN">MENUNGGU PEMBAYARAN</option>
+                                <option value="CANCEL">CANCEL</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <button type="button" name="filter" id="filter" class="btn btn-primary">Filter</button>
+                            <button type="button" name="refresh" class="btn btn-danger" id="reset"
+                                class="btn btn-default">Refresh</button>
+                        </div>
+
+                    </div>
+                </form>
                 <div class="table-responsive">
                     <table class="table w-100" id="table-data">
                         <thead>

@@ -51,7 +51,7 @@
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="{{ route('admin.pasien.index') }}" aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-article"></i>
+                                        <i class="ti ti-users"></i>
                                     </span>
                                     <span class="hide-menu">List Pasien</span>
                                 </a>
@@ -59,7 +59,7 @@
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="{{ route('admin.dokter.index') }}" aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-alert-circle"></i>
+                                        <i class="ti ti-users"></i>
                                     </span>
                                     <span class="hide-menu">List Dokter</span>
                                 </a>
@@ -71,7 +71,7 @@
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="{{ route('admin.point.index') }}" aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-cards"></i>
+                                        <i class="ti ti-coin"></i>
                                     </span>
                                     <span class="hide-menu">Point</span>
                                 </a>
@@ -84,7 +84,7 @@
                                 <a class="sidebar-link" href="{{ route('admin.medicine.index') }}"
                                     aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-file-description"></i>
+                                        <i class="ti ti-medicine-syrup"></i>
                                     </span>
                                     <span class="hide-menu">Obat</span>
                                 </a>
@@ -92,7 +92,7 @@
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="{{ route('admin.stock.index') }}" aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-typography"></i>
+                                        <i class="ti ti-stack"></i>
                                     </span>
                                     <span class="hide-menu">Manajemen Stock Obat</span>
                                 </a>
@@ -102,9 +102,10 @@
                                 <span class="hide-menu">Manejemen Trannsaksi</span>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="{{ route('admin.transaction.index') }}" aria-expanded="false">
+                                <a class="sidebar-link" href="{{ route('admin.transaction.index') }}"
+                                    aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-login"></i>
+                                        <i class="ti ti-file-invoice"></i>
                                     </span>
                                     <span class="hide-menu">Transaksi</span>
                                 </a>
@@ -119,7 +120,7 @@
                                       document.getElementById('logout-form').submit();"
                                     aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-mood-happy"></i>
+                                        <i class="ti ti-logout"></i>
                                     </span>
                                     <span class="hide-menu">Logout</span>
                                 </a>
@@ -137,7 +138,8 @@
                                 <span class="hide-menu">Home</span>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="{{ route('dokter.dashboard') }}" aria-expanded="false">
+                                <a class="sidebar-link" href="{{ route('dokter.dashboard') }}"
+                                    aria-expanded="false">
                                     <span>
                                         <i class="ti ti-layout-dashboard"></i>
                                     </span>
@@ -146,9 +148,10 @@
                             </li>
 
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="{{ route('dokter.transaction.index') }}" aria-expanded="false">
+                                <a class="sidebar-link" href="{{ route('dokter.transaction.index') }}"
+                                    aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-login"></i>
+                                        <i class="ti ti-file-invoice"></i>
                                     </span>
                                     <span class="hide-menu">Transaksi</span>
                                 </a>
@@ -163,7 +166,7 @@
                                   document.getElementById('logout-form').submit();"
                                     aria-expanded="false">
                                     <span>
-                                        <i class="ti ti-mood-happy"></i>
+                                        <i class="ti ti-logout"></i>
                                     </span>
                                     <span class="hide-menu">Logout</span>
                                 </a>
@@ -174,119 +177,124 @@
                 @endif
 
                 @if (Auth::user()->roles == 'APOTEKER')
-                <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-                    <ul id="sidebarnav">
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Home</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('apoteker.dashboard') }}" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-layout-dashboard"></i>
-                                </span>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Master Obat</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('apoteker.medicine.index') }}"
-                                aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-file-description"></i>
-                                </span>
-                                <span class="hide-menu">Obat</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('apoteker.stock.index') }}" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-typography"></i>
-                                </span>
-                                <span class="hide-menu">Manajemen Stock Obat</span>
-                            </a>
-                        </li>
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Manejemen Trannsaksi</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('apoteker.transaction.index') }}" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-login"></i>
-                                </span>
-                                <span class="hide-menu">Transaksi</span>
-                            </a>
-                        </li>
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Auth</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+                    <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                        <ul id="sidebarnav">
+                            <li class="nav-small-cap">
+                                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                                <span class="hide-menu">Home</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('apoteker.dashboard') }}"
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-layout-dashboard"></i>
+                                    </span>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-small-cap">
+                                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                                <span class="hide-menu">Master Obat</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('apoteker.medicine.index') }}"
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-medicine-syrup"></i>
+                                    </span>
+                                    <span class="hide-menu">Obat</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('apoteker.stock.index') }}"
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-stack"></i>
+                                    </span>
+                                    <span class="hide-menu">Manajemen Stock Obat</span>
+                                </a>
+                            </li>
+                            <li class="nav-small-cap">
+                                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                                <span class="hide-menu">Manejemen Trannsaksi</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('apoteker.transaction.index') }}"
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-file-invoice"></i>
+                                    </span>
+                                    <span class="hide-menu">Transaksi</span>
+                                </a>
+                            </li>
+                            <li class="nav-small-cap">
+                                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                                <span class="hide-menu">Auth</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();"
-                                aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-mood-happy"></i>
-                                </span>
-                                <span class="hide-menu">Logout</span>
-                            </a>
-                        </li>
-                    </ul>
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-logout"></i>
+                                    </span>
+                                    <span class="hide-menu">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
 
-                </nav>
-            @endif
+                    </nav>
+                @endif
 
-            @if (Auth::user()->roles == 'PASIEN')
-            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-                <ul id="sidebarnav">
-                    <li class="nav-small-cap">
-                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Home</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('pasien.dashboard') }}" aria-expanded="false">
-                            <span>
-                                <i class="ti ti-layout-dashboard"></i>
-                            </span>
-                            <span class="hide-menu">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-small-cap">
-                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Manejemen Trannsaksi</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route("pasien.transaction.index") }}" aria-expanded="false">
-                            <span>
-                                <i class="ti ti-login"></i>
-                            </span>
-                            <span class="hide-menu">Transaksi</span>
-                        </a>
-                    </li>
-                    <li class="nav-small-cap">
-                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Auth</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
+                @if (Auth::user()->roles == 'PASIEN')
+                    <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                        <ul id="sidebarnav">
+                            <li class="nav-small-cap">
+                                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                                <span class="hide-menu">Home</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('pasien.dashboard') }}"
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-layout-dashboard"></i>
+                                    </span>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-small-cap">
+                                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                                <span class="hide-menu">Manejemen Trannsaksi</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('pasien.transaction.index') }}"
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-file-invoice"></i>
+                                    </span>
+                                    <span class="hide-menu">Transaksi</span>
+                                </a>
+                            </li>
+                            <li class="nav-small-cap">
+                                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                                <span class="hide-menu">Auth</span>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();"
-                            aria-expanded="false">
-                            <span>
-                                <i class="ti ti-mood-happy"></i>
-                            </span>
-                            <span class="hide-menu">Logout</span>
-                        </a>
-                    </li>
-                </ul>
+                                    aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-logout  "></i>
+                                    </span>
+                                    <span class="hide-menu">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
 
-            </nav>
-        @endif
+                    </nav>
+                @endif
 
                 <!-- End Sidebar navigation -->
             </div>
@@ -365,6 +373,40 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
+        });
+        $("#filter").on("click", function(e) {
+            e.preventDefault();
+            var params = {};
+            $(".datatable-input").each(function() {
+                var i = $(this).data("col-index");
+                if (params[i]) {
+                    params[i] += "|" + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                parent
+                    .$("#table-data")
+                    .DataTable()
+                    .column(i)
+                    .search(val ? val : "", false, false);
+            });
+            parent.$("#table-data").DataTable().table().draw();
+        });
+
+        //reset button
+        $("#reset").on("click", function(e) {
+            e.preventDefault();
+            $(".datatable-input").each(function() {
+                $(this).val("");
+                parent
+                    .$("#table-data")
+                    .DataTable()
+                    .column($(this).data("col-index"))
+                    .search("", false, false);
+            });
+            parent.$("#table-data").DataTable().table().draw();
         });
     </script>
     @include('sweetalert::alert')

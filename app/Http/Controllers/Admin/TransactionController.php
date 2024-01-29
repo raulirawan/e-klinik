@@ -19,6 +19,16 @@ class TransactionController extends Controller
             $query = Transaction::query();
             $query->with(['pasien', 'dokter']);
             return DataTables::of($query)
+                ->filterColumn('created_at', function ($query, $keyword) {
+                    $dates = explode('|', $keyword);
+                    if (count($dates) > 0) {
+                        $start = Carbon::parse($dates[0])->format('Y-m-d H:i:s');
+                        $end = Carbon::parse($dates[1])->addDays(1)->format('Y-m-d H:i:s');
+                        $query->whereRaw('created_at >=  ? and created_at <= ?', [$start, $end]);
+                    } else {
+                        $query->whereRaw('created_at like ?', ["%{$dates[0]}%"]);
+                    }
+                })
                 ->editColumn('created_at', function ($row) {
                     return Carbon::parse($row->created_at)->format('d F Y H:i:s');
                 })
@@ -131,7 +141,7 @@ class TransactionController extends Controller
 
     public function updateStatus(Transaction $transaction)
     {
-        $transaction->status = 'MENUNGGU PEMBAYARAN';
+        $transaction->status = 'CANCEL';
 
         if ($transaction->save()) {
             Alert::success("Success", 'Data Berhasil Di Update!');
