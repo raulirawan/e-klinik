@@ -3,6 +3,9 @@
 
 <head>
     <!-- Meta Tags -->
+    <meta name="theme-color" content="#6777ef"/>
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/icon/icon-192x192.jpg') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +14,7 @@
     <title>@yield('title')</title>
     <!-- Favicon Icon -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('frontend') }}/assets/img/favicon.png" />
+    <link rel="icon" href="{{ asset('assets/images/icon/icon-128x128.jpg') }}" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/fontawesome.css" />
@@ -107,7 +110,7 @@
                 <div class="st-main-header-in">
                     <div class="st-main-header-left">
                         <a class="st-site-branding" href="{{ url('/') }}"><img
-                                src="{{ asset('frontend') }}/assets/img/logo.png" alt="Nischinto"></a>
+                                src="{{ asset('assets/images/logos/logo-pockets.png') }}" width="100" alt="Pockets"></a>
                     </div>
                     <div class="st-main-header-right">
                         <div class="st-nav">
@@ -156,7 +159,7 @@
                     <div class="col-lg-3">
                         <div class="st-footer-widget">
                             <div class="st-text-field">
-                                <img src="{{ asset('frontend') }}/assets/img/footer-logo.png" alt="Nischinto"
+                                <img src="{{ asset('assets/images/logos/logo-pockets.png') }}" width="100" alt="Nischinto"
                                     class="st-footer-logo">
                                 <div class="st-height-b25 st-height-lg-b25"></div>
                                 <div class="st-footer-text">Lorem ipsum dolor sit consectet adipisicing sed do eiusmod
@@ -275,7 +278,14 @@
     </script>
     @include('sweetalert::alert')
     @stack('scripts')
-
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function(reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
 </body>
 
 </html>

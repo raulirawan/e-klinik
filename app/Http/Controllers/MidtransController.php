@@ -18,13 +18,10 @@ class MidtransController extends Controller
 
         //buat instance midtrans
         //assign ke variable untuk memudahkan coding
-
         $status = $request->body['transaction_status'];
-
         $transaksi = Transaction::where('code', $request->order_id)->first();
         // handler notification status midtrans
         if ($status == "settlement") {
-
             $transaksi->status = 'PAID';
 
             // kurangin stock barang
@@ -66,7 +63,6 @@ class MidtransController extends Controller
                 $user->save();
                 $transaksi->total_point_earned = $point->point;
             }
-
             $transaksi->save();
             return response()->json([
                 'meta' => [
@@ -77,6 +73,12 @@ class MidtransController extends Controller
         } else if ($status == "pending") {
             $transaksi->status = 'MENUNGGU PEMBAYARAN';
             $transaksi->save();
+            return response()->json([
+                'meta' => [
+                    'code' => 200,
+                    'message' => 'Midtrans Payment Pending'
+                ]
+            ]);
         } else if ($status == 'deny') {
             $transaksi->status = 'CANCEL';
             $transaksi->save();

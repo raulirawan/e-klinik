@@ -2,10 +2,13 @@
 <html lang="id">
 
 <head>
+    <meta name="theme-color" content="#6777ef"/>
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/icon/icon-192x192.jpg') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.png"') }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/icon/icon-128x128.jpg') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @stack('styles')
@@ -19,9 +22,9 @@
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div>
-                <div class="brand-logo d-flex align-items-center justify-content-between">
+                <div class="brand-logo text-center mt-3 align-items-center justify-content-between">
                     <a href="./index.html" class="text-nowrap logo-img">
-                        <img src="{{ asset('assets/images/logos/dark-logo.svg') }}" width="180" alt="" />
+                        <img src="{{ asset('assets/images/logos/logo-pockets.png') }}" width="80" alt="" class="text-center" />
                     </a>
                     <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                         <i class="ti ti-x fs-8"></i>
@@ -411,6 +414,14 @@
     </script>
     @include('sweetalert::alert')
     @stack('scripts')
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function(reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
 </body>
 
 </html>
