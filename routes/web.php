@@ -25,7 +25,7 @@ Route::post('/check-available', [HomeController::class, 'checkAvailablePost'])->
 
 Route::post('/make-appointment', [HomeController::class, 'makeAppointment'])->name('makeAppointment')->middleware('auth');
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 
     // CRUD Poin
