@@ -18,7 +18,7 @@ class MidtransController extends Controller
 
         //buat instance midtrans
         //assign ke variable untuk memudahkan coding
-        $status = $request->body['transaction_status'];
+        $status = $request->transaction_status;
         $transaksi = Transaction::where('code', $request->order_id)->first();
         // handler notification status midtrans
         if ($status == "settlement") {
