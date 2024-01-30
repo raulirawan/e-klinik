@@ -1,11 +1,11 @@
 {
     "name": "Pockets Dental",
-    "short_name": "LPT",
+    "short_name": "Pockets Dental",
     "start_url": "/",
-    "background_color": "#6777ef",
+    "background_color": "#ffffff",
     "description": "Pockets Dental",
     "display": "fullscreen",
-    "theme_color": "#6777ef",
+    "theme_color": "#ffffff",
     "icons": [
         {
             "src": "assets/images/icon/icon-512x512.jpg",

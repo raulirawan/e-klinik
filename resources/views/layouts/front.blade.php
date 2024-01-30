@@ -3,7 +3,7 @@
 
 <head>
     <!-- Meta Tags -->
-    <meta name="theme-color" content="#6777ef"/>
+    <meta name="theme-color" content="#ffffff"/>
     <link rel="apple-touch-icon" href="{{ asset('assets/images/icon/icon-192x192.jpg') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <meta charset="utf-8">
