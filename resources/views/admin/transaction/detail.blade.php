@@ -101,10 +101,10 @@
 
                     @php
                     if(Auth::user()->roles == "DOKTER") {
-                        $routeUpdate = route('dokter.transaction.update')
+                        $routeUpdate = route('dokter.transaction.update');
 
                     }else {
-                        $routeUpdate = route('admin.transaction.update')
+                        $routeUpdate = route('admin.transaction.update');
                     }
                     @endphp
                     <form action="{{ $routeUpdate }}" method="POST"
