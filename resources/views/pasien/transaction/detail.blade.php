@@ -131,7 +131,7 @@
                             @csrf
                             <input type="hidden" id="total_price" value="{{ $transaction->total_price }}" name="total_price">
                             <input type="hidden" id="total_point" value="0" name="total_point">
-                            <button class="btn btn-success mt-3" type="submit">Lakukan Pembayarran</button>
+                            <button class="btn btn-success mt-3" type="submit">Lakukan Pembayaran</button>
                         </form>
                     @endif
                 </div>
