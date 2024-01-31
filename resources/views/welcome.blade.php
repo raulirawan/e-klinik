@@ -14,11 +14,10 @@
             <div class="st-hero st-style1 st-type1">
                 <div class="container">
                     <div class="st-hero-text">
-                        <h1 class="st-hero-title">Always Laugh <br>When you Can.</h1>
+                        <h1 class="st-hero-title">Always Smile <br>When you Can.</h1>
                         <!-- <h1 class="st-hero-title">Wellness Builds <br>Upon the Medical.</h1> -->
                         <!-- <h1 class="st-hero-title">Way to get happy. <br>Best promises.</h1> -->
-                        <div class="st-hero-subtitle">Lorem ipsum dolor sit amet, consectetur mag. <br> Tempor
-                            incididunt ut labore et dolore elit.</div>
+                        <div class="st-hero-subtitle">Bringing Smiles to Life: Your Trusted Dental Care Partner</div>
                         <div class="st-hero-btn">
                             <a href="#department" class="st-btn st-style1 st-color3 st-smooth-move">Departments</a>
                         </div>
