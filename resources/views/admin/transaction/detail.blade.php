@@ -98,7 +98,16 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title fw-semibold mb-4">Transaksi</h5>
-                    <form action="{{ route('admin.transaction.update', $transaction->id) }}" method="POST"
+
+                    @php
+                    if(Auth::user()->roles == "DOKTER") {
+                        $routeUpdate = route('dokter.transaction.update')
+
+                    }else {
+                        $routeUpdate = route('admin.transaction.update')
+                    }
+                    @endphp
+                    <form action="{{ $routeUpdate }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="row">
