@@ -26,7 +26,7 @@
                     @if (Auth::user()->roles == 'PASIEN')
                     <a href="{{ url('/') }}" class="text-nowrap logo-img">
                     @else
-                    <a href="{{ url(strtolower(Auth::user()->roles)'/dashboard') }}" class="text-nowrap logo-img">
+                    <a href="{{ url(strtolower(Auth::user()->roles).'/dashboard') }}" class="text-nowrap logo-img">
                     @endif
                         <img src="{{ asset('assets/images/logos/logo-pockets.png') }}" width="80" alt="" class="text-center" />
                     </a>
