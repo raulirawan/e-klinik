@@ -77,7 +77,7 @@
                                     d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z" />
                             </svg>
                             <a href="#"><span class="__cf_email__"
-                                    data-cfemail="9df4f3fbf2ddf3f4eefef5f4f3e9f2b3fef2f0">[email&#160;protected]</span></a>
+                                    data-cfemail="9df4f3fbf2ddf3f4eefef5f4f3e9f2b3fef2f0">pocketsdent@gmail.com</span></a>
                         </li>
                         <li>
                             <svg enable-background="new 0 0 512.021 512.021" viewBox="0 0 512.021 512.021"
@@ -93,7 +93,7 @@
                                         d="m368.02 272c-8.836 0-16-7.164-16-16 0-52.935-43.065-96-96-96-8.836 0-16-7.164-16-16s7.164-16 16-16c70.58 0 128 57.42 128 128 0 8.836-7.163 16-16 16z" />
                                 </g>
                             </svg>
-                            <a href="#">+01 - 234 567 890</a>
+                            <a href="#">+62 812-8870-5325</a>
                         </li>
                     </ul>
                     <ul class="st-social-btn st-style1 st-mp0">
@@ -203,14 +203,12 @@
                         <div class="st-footer-widget">
                             <h2 class="st-footer-widget-title">Contacts</h2>
                             <ul class="st-footer-contact-list st-mp0">
-                                <li><span class="st-footer-contact-title">Address:</span> 1223 Fulton Street San Diego
-                                    CA 941-23 USA</li>
+                                <li><span class="st-footer-contact-title">Address:</span>Jl. Taman Malaka Selatan No. 29A</li>
                                 <li><span class="st-footer-contact-title">Email:</span> <a
                                         href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                        data-cfemail="b0ded9c3d3d8d9dec4dff0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</a>
+                                        data-cfemail="b0ded9c3d3d8d9dec4dff0d7ddd1d9dc9ed3dfdd">pocketsdent@gmail.com</a>
                                 </li>
-                                <li><span class="st-footer-contact-title">Phone:</span> (+01) - 234 567 890 <br>(+01) -
-                                    345 678 901</li>
+                                <li><span class="st-footer-contact-title">Phone:</span> +62 812-8870-5325</li>
                             </ul>
                         </div>
                     </div>
