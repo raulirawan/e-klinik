@@ -103,6 +103,8 @@
                     if(Auth::user()->roles == "DOKTER") {
                         $routeUpdate = route('dokter.transaction.update', $transaction->id);
 
+                    }elseif(Auth::user()->roles == 'APOTEKER'){
+                        $routeUpdate = route('apoteker.transaction.update', $transaction->id);
                     }else {
                         $routeUpdate = route('admin.transaction.update', $transaction->id);
                     }
